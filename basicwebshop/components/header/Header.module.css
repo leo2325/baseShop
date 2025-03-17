@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'paladins';
+    src: url('/fonts/paladins.ttf') format('truetype');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'paladinslaser';
+    src: url('/fonts/paladinslaser.ttf') format('truetype');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'paladinsstraight';
+    src: url('/fonts/paladinsstraight.ttf') format('truetype');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'coolveticaRgIt';
+    src: url('/fonts/coolveticaRgIt.otf') format('truetype');
+    font-style: italic;
+}  
+
+.header {
+    background-color: #0b255d;
+    color: #ffeafc;
+    padding: 1.6rem;
+}
+    .headerTop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+        .title {
+            width: 6.5rem;
+            height: 3rem;
+            margin: 0 1rem 2rem;
+            background-color: #0b255d;
+            border: .1rem solid #ffeafc;
+            border-radius: 50%;
+            font-family: 'paladins', sans-serif;      
+            font-size: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Menu à droite avec les icônes simplifié */
+        .topNav {
+            display: flex;
+            justify-content: space-between; 
+            list-style: none;
+        }
+            .topNav li {
+                padding: 1rem;
+            }
+                .icon {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    color: #ffeafc;
+                }
+
+.nav {
+    width: 100%;
+    font-family: 'paladinslaser', sans-serif;      
+    font-size: .8rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+    .nav a {
+        text-decoration: none;
+        font-weight: 500;
+        padding: 1rem .5rem;
+    }
+    .nav a:hover, .topNav li:hover {
+        background-color: #0b255d;
+        border: .1rem solid #ffeafc;
+        border-radius: 3rem;
+    }
