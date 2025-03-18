@@ -1,0 +1,48 @@
+.container {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #ffeafc;
+    color: #0b255d;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'paladinsstraight', sans-serif;   
+    font-size: 1.2rem;
+    color: #0b255d;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #0b255d;
+}
+
+.socials ul {
+    list-style: none;
+    padding: 0;
+}
+
+.socials li {
+    margin: 0.5rem 0;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #0b255d;
+    font-weight: bold;
+}
+
+.socials a:hover {
+    text-decoration: underline;
+}

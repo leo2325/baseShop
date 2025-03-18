@@ -1,0 +1,27 @@
+.container {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #ffeafc;
+    color: #0b255d;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'paladinsstraight', sans-serif;   
+    font-size: 1.2rem;
+    color: #0b255d;
+}
+
+.content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-family: 'coolveticaRgIt', sans-serif; 
+    text-align: justify;
+}
+
+.content strong {
+    color: #0b255d;
+}

@@ -21,7 +21,7 @@
 
 .header {
     background-color: #0b255d;
-    color: #ffeafc;
+    color: #ffffff;
     padding: 1.6rem;
 }
     .headerTop {
@@ -35,7 +35,7 @@
             height: 3rem;
             margin: 0 1rem 2rem;
             background-color: #0b255d;
-            border: .1rem solid #ffeafc;
+            border: .1rem solid #ffffff;
             border-radius: 50%;
             font-family: 'paladins', sans-serif;      
             font-size: 3rem;
@@ -55,7 +55,7 @@
                 .icon {
                     width: 1.5rem;
                     height: 1.5rem;
-                    color: #ffeafc;
+                    color: #ffffff;
                 }
 
 .nav {

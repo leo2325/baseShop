@@ -1,25 +1,20 @@
 import styles from './Home.module.css';
 import Introduction from './Introduction';
 import BestSeller from './bestSeller/BestSeller';
-
-
+import NewProducts from './newProducts/NewProducts';
 
 const Home = () => {
     return (
-      <div className={styles.homeContainer}>
-        
-        <h2 className={styles.mainTitle}>Bienvenue</h2>
-        
-        <Introduction/>
+        <div className={styles.homeContainer}>
+            <h2 className={styles.mainTitle}>Bienvenue</h2>
+            
+            <Introduction />
+            <BestSeller />
+            <NewProducts />
 
-
-
-        {/* Exemple de slider, produits récents, etc. */}
-
-        {/* Ils parlent de nous */}
-
-      </div>
+            {/* Section "Ils parlent de nous" à ajouter ici */}
+        </div>
     );
-  };
-  export default Home;
-  
+};
+
+export default Home;

@@ -1,4 +1,8 @@
 "use client";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 import Image from 'next/image';
 
 import Chocolait from '@/assets/images/products/chocolait.png';
@@ -7,21 +11,14 @@ import Pistache from '@/assets/images/products/pistache.png';
 import BuenoBlanc from '@/assets/images/products/buenoblanc.png';
 import ChocoBlanc from '@/assets/images/products/chocoblanc.png';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import styles from './NewProducts.module.css';
 
-import styles from './BestSeller.module.css';
-
-const bestSellers = [
+const newProducts = [
     {
         id: 1,
         name: "Chocolait",
         image: Chocolait,
-        price: "29.99€",
-        
+        price: "29.99€"
     },
     {
         id: 2,
@@ -49,19 +46,19 @@ const bestSellers = [
     }
 ];
 
-export default function BestSeller() {
+export default function NewProducts() {
     return (
         <div className={styles.bestSeller}>
-        <h2 className={styles.title}>🔥 Best Seller 🔥</h2>
+        <h2 className={styles.title}>🔥 New Products 🔥</h2>
 
-            <Swiper
+        <Swiper
                 modules={[Autoplay]}
                 spaceBetween={3}
                 slidesPerView={3}
                 autoplay={{ delay: 3000 }}
                 loop={true}
             >
-                {bestSellers.map(product => (
+                {newProducts.map(product => (
                     <SwiperSlide key={product.id}>
                         <div className={styles.card}>
                             <Image
@@ -70,6 +67,7 @@ export default function BestSeller() {
                                 className={styles.image}
                                 width={100}
                                 height={50}
+
                             />
                             <h3 className={styles.productName}>{product.name}</h3>
                             <p className={styles.price}>à partir de {product.price}</p>
