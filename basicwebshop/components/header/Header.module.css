@@ -1,79 +1,152 @@
-@font-face {
-    font-family: 'paladins';
-    src: url('/fonts/paladins.ttf') format('truetype');
-    font-style: italic;
-}
-@font-face {
-    font-family: 'paladinslaser';
-    src: url('/fonts/paladinslaser.ttf') format('truetype');
-    font-style: italic;
-}
-@font-face {
-    font-family: 'paladinsstraight';
-    src: url('/fonts/paladinsstraight.ttf') format('truetype');
-    font-style: italic;
-}
-@font-face {
-    font-family: 'coolveticaRgIt';
-    src: url('/fonts/coolveticaRgIt.otf') format('truetype');
-    font-style: italic;
-}  
+@import '../../styles/variables.css';
 
+body.noScroll {
+    overflow: hidden;
+    height: 100vh;
+}
 .header {
-    background-color: #0b255d;
-    color: #ffffff;
-    padding: 1.6rem;
-}
-    .headerTop {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-        .title {
-            width: 6.5rem;
-            height: 3rem;
-            margin: 0 1rem 2rem;
-            background-color: #0b255d;
-            border: .1rem solid #ffffff;
-            border-radius: 50%;
-            font-family: 'paladins', sans-serif;      
-            font-size: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        /* Menu à droite avec les icônes simplifié */
-        .topNav {
-            display: flex;
-            justify-content: space-between; 
-            list-style: none;
-        }
-            .topNav li {
-                padding: 1rem;
-            }
-                .icon {
-                    width: 1.5rem;
-                    height: 1.5rem;
-                    color: #ffffff;
-                }
-
-.nav {
     width: 100%;
-    font-family: 'paladinslaser', sans-serif;      
-    font-size: .8rem;
-    list-style: none;
+    background-color: var(--first-color);    
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
-    .nav a {
-        text-decoration: none;
-        font-weight: 500;
-        padding: 1rem .5rem;
+.headerTop {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.title {
+    color: var(--second-color);
+    font-family: 'MainTitleFont', sans-serif; 
+    font-size: 1.2rem;
+}
+/* Menu icônes en haut à droite */
+.topNav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+/* BUTTONS */
+.header button {  
+    background-color: transparent;  
+    border: none;     
+    padding: .8rem;
+    cursor: pointer;
+}
+.header button:hover {
+    transform: scale(1.2);    
+}
+
+.icon {
+    width: 1.4rem;
+    height: 1.4rem;    
+    border: none;
+    color: var(--second-color);
+}
+
+/* Conteneur du menu (pour couvrir la hauteur restante) */
+.navWrapper {
+    position: fixed;
+    top: 4.8rem; /* Hauteur du header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 4rem); 
+    background-color: var(--first-color);
+    z-index: 750;
+    overflow-y: auto; /* Si trop de contenu */
+}
+
+/* Menu général */
+.nav {
+    width: 100%;
+    color: var(--second-color);
+    font-family: 'TxtFont', sans-serif; 
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.nav a, .subMenuWrapper a {
+    width: 100%;
+    padding: .8rem;
+    text-decoration: none;
+}
+
+.subMenuWrapper {
+    width: 100%;
+    text-decoration: none;
+    font-family: 'TxtFont', sans-serif; 
+    font-size: .8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.subMenuWrapper button{
+    font-family: 'TxtFont', sans-serif;
+    color: var(--third-color);
+}
+/*HOVER*/
+.subMenuWrapper button:hover {
+    transform: scale(1.1);    
+}
+/* Animation de glissement du menu */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%); /* Menu caché sur la gauche */
     }
-    .nav a:hover, .topNav li:hover {
-        background-color: #0b255d;
-        border: .1rem solid #ffeafc;
-        border-radius: 3rem;
+    to {
+        transform: translateX(0); /* Menu au centre de l'écran */
     }
+}
+@keyframes slideOut {
+    from {
+        transform: translateX(0); /* Menu au centre de l'écran */
+    }
+    to {
+        transform: translateX(-100%); /* Menu caché sur la gauche */
+    }
+}
+/* Ajoutez une classe pour l'animation de glissement */
+.navWrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%); /* Le menu commence caché */
+    transition: transform 0.3s ease-in-out;    background-color: var(--first-color);
+}
+.navWrapper.open {
+    animation: slideIn 0.5s forwards; /* Animation pour glisser */
+}
+.navWrapper.closed {
+    animation: slideOut 0.5s forwards; /* Animation pour fermer */
+}
+
+
+
+
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--first-color);
+}
+
+.title {
+    font-family: 'MainTitleFont', sans-serif;
+    color: var(--second-color);
+    font-size: 1.5rem;
+}

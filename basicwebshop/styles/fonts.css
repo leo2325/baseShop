@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'MainTitleFont';
+    src: url('/fonts/KGLETHERGO.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TxtFont';
+    src: url('/fonts/caviarDreams/CaviarDreams_Bold.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TxtThinFont';
+    src: url('/fonts/caviarDreams/CaviarDreams.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'coolveticaRgIt';
+    src: url('/fonts/coolveticaRgIt.otf') format('truetype');
+    font-style: italic;
+}

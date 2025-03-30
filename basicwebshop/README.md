@@ -34,3 +34,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+
+
+COMPONENTS:
+
+    BANNERS: Le composants banners sont des composants prêt à être ajoutés à une page selon les envies.
+        - bannersIntros: En début de chaque page, fond d'écran image. (Suggestion contenu: poser une question au consommateur, et apporter une réponse.)
+        - productsSelection: Swiper d'une séléction de produits, 3 tailles différentes (exemple:          NewProducts, BestSeller, ClassicsProducts...)
+        - smallTop: bandeau small height tout en haut du body (exemple: ShippingFree, PromoSeason, CodePromo...)
+        

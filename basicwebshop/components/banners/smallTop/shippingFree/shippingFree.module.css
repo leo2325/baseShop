@@ -1,0 +1,66 @@
+.container {
+    background-color: var(--fifth-color);
+    padding: .4rem 1rem;
+
+/*      
+    background-color: #ffeafc;
+    margin: 1rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+*/
+    position: relative;
+    overflow: hidden;
+}
+
+.title {
+    display: none;
+/*
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto 0;
+    font-family: 'coolveticaRgIt', sans-serif; 
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #0b255d;
+*/
+}
+
+.patch {
+    position: absolute;
+    top: -16px;
+    right: -8px;
+    background-color: var(--forth-color);
+    color: var(--first-color);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'TxtFont', sans-serif; 
+    font-weight: bold;
+    box-shadow: -2px 4px 4px rgb(15, 8, 77);
+    transform: rotate(-15deg); /* Effet patch incliné */
+}
+
+.content {
+    font-size: .8rem;
+    font-weight: bolder;
+    color: var(--second-color);
+    text-transform: uppercase;
+}
+
+.content p {
+    width: 80%;
+    margin: 0;
+    font-family: 'TxtThinFont', sans-serif; 
+}
+
+.highlight {
+    color:  var(--forth-color);
+    font-size: 1rem;
+    font-weight: bold;
+}

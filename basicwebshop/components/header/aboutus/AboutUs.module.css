@@ -1,0 +1,95 @@
+.container {
+    width: 80%;
+    margin: 1.2rem auto;
+    background-color: var(--first-color);
+    color: var(--second-color);
+    text-align: center;    
+}
+.title {
+    font-family: 'TxtFont', sans-serif; 
+    text-transform: uppercase;
+    margin: .8rem auto;
+    text-align: center;
+    color: var(--second-color);
+}
+.content p {
+    margin: .1rem auto;
+    font-family: 'TxtThinFont', sans-serif; 
+}
+.content strong {
+    color: var(--forth-color);
+    font-size: 1rem;
+}
+/*  FAQ  */
+.faqItem {    
+    font-family: 'TxtFont', sans-serif; 
+    border-bottom: 1px solid var(--third-color);
+    padding: .8rem ;
+    cursor: pointer;
+}
+.question {
+    color: var(--second-color);
+    font-size: 1rem;
+}
+.answer {
+    margin: 0.4rem;
+    color: var(--third-color);
+    font-size: 1rem;
+}
+/*  CONTACTS    */
+.contactItem, .contactIntro_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: var(--second-color);
+}
+/*  LIVRAISONS  */
+.titleSection {
+    width: 100%;
+    margin: .8rem auto;
+    font-family: 'TxtFont', sans-serif; 
+    font-size: 1.2rem;
+    color: var(--second-color);
+}
+/*  SOCIALS  */
+.socialMedias_container {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+.socialMedias_container h3 {
+    width: 100%;
+    font-family: 'TxtThinFont', sans-serif;
+    color: var(--second-color);
+    font-size: 1rem;
+    text-align: center;
+}
+.socialsIcons_container {
+    margin: 1.6rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.socialLink {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.2rem;  /* Espace entre l'icône et le texte */
+    text-decoration: none;
+    color: var(--first-color);
+    font-family: 'TxtThinFont', sans-serif; 
+    font-size: .8rem;
+    transition: color 0.3s ease;
+}
+.socialLink:hover {
+    transform: scale(1.2);
+    color: var(--second-color);
+}

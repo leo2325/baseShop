@@ -1,0 +1,32 @@
+@import './fonts.css';
+
+:root {
+
+    /*===============     COLORS     ===============*/
+    --first-color: #fffcf5;
+    --first-color-light: #ffffff;
+
+
+    --second-color: #000000;
+    --second-color-light: #616161;
+    
+    
+    --third-color: #ddaa64;
+    --third-color-dark: #a47e4a;
+    --third-color-light: #ffdcab;
+    
+    
+    --forth-color: #d80000;
+    --forth-color-dark: #720000;
+    --forth-color-light: #f64747;
+    
+    
+    --fifth-color: #ffeafe;
+    --fifth-color-dark: #b1a1b1;
+    --fifth-color-light: #ffffff;
+
+
+
+    /*===============     BUTTON:HOVER     ===============*/
+    
+}

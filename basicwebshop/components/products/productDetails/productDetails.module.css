@@ -1,0 +1,171 @@
+.productDetails_section {
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--first-color);    
+}
+.sectionContent {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.formatTitle{
+    width: 100%;
+    margin: 0 auto;
+    color: var(--second-color);
+    font-family: 'TxtFont', sans-serif;
+    font-size: 1.2rem;
+}
+/*=================    CAROUSSEL    =================*/
+.swiperContainer {
+    height: auto;
+
+}
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.ProductDetails_img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*=================    DESCRIPTION    =================*/
+.ProductDetails_title {
+    width: 60%;
+    margin: 0 auto;
+    font-family: 'MainTitleFont', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--second-color);
+}
+.productDescription {
+    margin: .8rem auto;
+    font-family: 'TxtThinFont', sans-serif;
+    font-size: 1rem;
+    text-align: justify;
+    color: var(--second-color);
+}
+
+/*=================    DETAILS TOGGLE    =================*/
+.toggleDescription_title {
+    margin: .4rem;
+    border-bottom: .1rem solid var(--second-color);
+    color: var(--second-color);
+    font-family: 'TxtFont';
+    font-size: 1rem;
+}
+/*HOVER*/
+.toggleDescription_title:hover {
+    transform: scale(1.03);    
+}
+
+.toggleDescription_Content {
+    width: 100%;
+    list-style: none;
+    color: var(--third-color);
+    font-family: 'TxtFont', sans-serif;
+}
+
+.toggleDescription_Content p {
+    padding: .8rem;
+}
+
+.ToggleDescription_Item {
+    width: 100%;
+}
+
+/*=================    FORMAT SELECTOR    =================*/
+
+.price {
+    text-align: center;
+    font-family: 'TxtThinFont';
+    font-size: 1.6rem;
+    color: var(--second-color);
+    padding: 1.2rem;
+}
+/* Bouton format seléctionné */
+.activeFormat {
+    background-color: var(--third-color);
+    color: white;
+}
+.formatSelector {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.formatList {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    background-color: var(--first-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.formatList p {
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    color: var(--second-color);
+    font-family: 'TxtThinFont', sans-serif;
+    font-size: .8rem;
+    padding: 1rem;
+    margin: 0 auto;
+    transition: background-color 0.3s;
+}
+/*HOVER*/
+.formatList p:hover {
+    transform: scale(1.2);
+}
+.formatList.show {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.selectedFormat {
+    font-weight: bold;
+    background-color: var(--fifth-color);
+    color: var(--second-color);
+}
+
+/*=================    QUANTITY SELECTOR    =================*/
+.quantityControls_container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.quantityBtn {  
+    width: 4rem;  
+    height: 4rem;
+    background-color: var(--first-color);
+    color: var(--forth-color);
+    border: none;
+    border-radius: 4rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+/*HOVER*/
+.quantityBtn:hover {
+    transform: scale(1.2);
+}
+.quantityValue {
+    background-color: var(--first-color);
+    color: var(--second-color);    
+    padding: 0.4rem 0.8rem;
+    font-family: 'Txt ThinFont', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}

@@ -1,0 +1,312 @@
+/* ========================== UTILITAIRES ========================== */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-bold { font-weight: bold; }
+.text-center {text-align: center; }
+.margin-auto { margin: 0 auto; }
+.padding-small { padding: .8rem; }
+.errorMessage {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ========================== TITRES ========================== */
+.title {
+    width: 100%;
+    margin: .4rem auto 0;
+    color: var(--forth-color);
+    font-family: 'MainTitleFont', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* ========================== CARTES PRODUITS ========================== */
+.card {
+    width: 100%;
+    height: auto;
+    background-color: var(--first-color);
+    border-radius: .4rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+/*HOVER*/
+.card:hover {
+    transform: scale(1.03);    
+}
+
+.card:hover::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); 
+    z-index: 1;
+}
+
+/* ========================== TAILLES DES CARTES ========================== */
+.card--small { 
+    width: 100%;
+}
+.card--medium { 
+    width: 100%; 
+}
+.card--large { 
+    width: 100%; 
+}
+
+/* ========================== IMAGES ========================== */
+.image {
+    width: 96%;
+    /*
+    height: auto;
+    */
+    object-fit: cover;
+    border-radius: .4rem;
+}
+
+.card--small .image { height: auto; }
+.card--medium .image { height: auto; }
+.card--large .image { height: auto; }
+
+/* ========================== TEXTES DANS LES CARTES ========================== */
+.name {
+    font-family: 'MainTitleFont', sans-serif;
+    color: var(--second-color);
+    text-align: center;
+    margin: .2rem auto;
+}
+.card--small .name { font-size: .8rem; }
+.card--medium .name { font-size: 1rem; }
+.card--large .name { 
+    font-size: 1.2rem;
+    text-shadow: 0 .1rem .1rem var(--third-color);
+    text-align: left;
+    margin: .8rem auto 1.2rem;
+}
+
+
+.span {
+    font-family: 'TxtThinFont', sans-serif;
+    color: var(--second-color);
+    text-align: center;
+}
+.card--small .span { font-size: .6rem; }
+.card--medium .span { font-size: .6rem; }
+.card--large .span { font-size: 1.2rem; }
+
+/* ========================== PRIX ========================== */
+.price {
+    font-family: 'MainTitleFont', sans-serif;
+    background-color: var(--first-color);
+    color: var(--forth-color);
+    text-align: center;
+}
+.card--small .price { font-size: 1rem; }
+.card--medium .price { font-size: 1.2rem; }
+.card--large .price { font-size: 1.6rem; }
+
+/* ========================== COMPOSANT DESCRIPTION ========================== */
+.descriptionElements_container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.ProductDetails_title {
+    width: 60%;
+    margin: 0 auto;
+    font-family: 'MainTitleFont', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--second-color);
+}
+.productDescription {
+    margin: .8rem auto;
+    font-family: 'TxtThinFont', sans-serif;
+    font-size: 1rem;
+    text-align: justify;
+    color: var(--second-color);
+}
+/* bouton d'ajout au panier à reprendre */
+.productDetails_btn {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+
+/* ========================== FORMAT SELECTOR ========================== */
+.formatSelector {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* Liste des formats */
+.formatContainer {
+    width: 100%;
+}
+/* Titre du bouton format */
+.formatTitle{
+    width: 100%;
+    margin: 0 auto;
+    color: var(--second-color);
+    font-family: 'TxtFont', sans-serif;
+    font-size: 1.2rem;
+}
+/* Bouton format seléctionné */
+.activeFormat {
+    background-color: var(--third-color);
+    color: white;
+}
+.formatList {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    background-color: var(--first-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.formatList p {
+    border: none;
+    border-radius: .4rem;
+    cursor: pointer;
+    color: var(--second-color);
+    font-family: 'TxtThinFont', sans-serif;
+    font-size: .8rem;
+    padding: 1rem;
+    margin: .4rem auto;
+    transition: background-color 0.3s;
+    font-family: 'TxtFont', sans-serif;
+}
+/*HOVER*/
+.formatList p:hover {
+    transform: scale(1.2);    
+}
+
+
+
+
+
+
+ 
+/* ========================== MODAL ========================== */
+.modalBackdrop {
+    position: absolute;
+    top: 4.8rem;
+    left: 0;
+    width: 100%;
+    padding: .4rem 1.6rem;
+    background-color: var(--first-color);
+    z-index: 700;
+}
+.ProductDetails_container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+/* ================= GRID LAYOUT ================= */
+.grid {
+    background-color: var(--first-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.2rem;
+    padding: 1.2rem;
+}
+
+/* ================= SWIPER CONTAINER ================= */
+.container {
+    margin: 0 auto;
+    padding: 1.6rem;
+    background-color: var(--first-color);
+}
+
+
+
+
+
+
+
+
+
+.confirmationMessage {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.selectedFormat {
+    font-weight: bold;
+    background-color: var(--fifth-color);
+    color: var(--second-color);
+}
+
+
+
+
+
+.modaleHeader_container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+
+
+
+
+
+.modalBackdrop {
+    position: absolute;
+    top: 4.4rem;
+    left: 0;
+    width: 100%; 
+    height: 100vh;  
+    background-color: var(--first-color); 
+    padding: .4rem 1.6rem;
+    z-index: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.promotionSwiper_container {
+    width: 88%;
+    height: auto;
+    margin: 0 auto;
+}
+.promotionSwiper_container .title {
+    width: 100%;
+    margin: 0 auto;
+    color: var(--forth-color);
+    font-family: 'MainTitleFont', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}

@@ -1,27 +1,87 @@
-const Cart = () => {
-    const cartItems = [
-      { id: 1, name: 'Produit 1', price: 20, quantity: 2 },
-      { id: 2, name: 'Produit 2', price: 40, quantity: 1 },
-    ];
-  
-    const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart, clearCart, updateQuantity } from "@/app/store/cartSlice";
+import { useRouter } from "next/navigation";
+import styles from "./Cart.module.css";
+import Button from '../elements/buttons/Btn';
+
+export default function Cart() {
+    const dispatch = useDispatch();
+    const router = useRouter();
+    
+    const cartItems = useSelector((state) => state.cart.cart) || [];
+    console.log("Redux cart state :", cartItems);
+
+    const handleRemoveItem = (id, format) => {
+        dispatch(removeFromCart({ id, format }));
+    };
+
+    const handleClearCart = () => {
+        dispatch(clearCart());
+    };
+
+    const handleCheckout = () => {
+        if (!cartItems.length) {
+            alert("Votre panier est vide !");
+            return;
+        }
+        router.push("/checkout");
+    };
+
+    const handleQuantityChange = (id, format, newQuantity) => {
+        if (newQuantity < 1) return;
+        dispatch(updateQuantity({ id, format, quantity: newQuantity }));
+    };
+    console.log("Rendu côté", typeof window !== "undefined" ? "client" : "serveur");
+
     return (
-      <div>
-        <h2>Votre Panier</h2>
-        <div>
-          {cartItems.map((item) => (
-            <div key={item.id}>
-              <h3>{item.name}</h3>
-              <p>Prix : ${item.price}</p>
-              <p>Quantité : {item.quantity}</p>
+        <div className={styles.cartContainer}>
+            <h2>Votre Panier</h2>
+            {cartItems.length === 0 ? (
+                <p>Votre panier est vide.</p>
+            ) : (
+                <ul>
+                    {cartItems.map((item) => (
+                        <li key={`${item.id}-${item.format}`} className={styles.cartItem}>
+                            <div className={styles.cartItemElement}>
+                                <img src={item.image} alt={item.name} className={styles.image} />
+                            </div>
+                            
+                            <div className={styles.cartItemElement}>
+                                <h3>{item.name}</h3>
+                                <p>{item.price} €</p>
+                            </div>
+
+                            <div className={styles.cartItemElement}>
+                                <div className={styles.quantityControls}>
+                                    <button onClick={() => handleQuantityChange(item.id, item.format, item.quantity - 1)} className={styles.quantityBtn}>−</button>
+                                    <span className={styles.quantityValue}>{item.quantity}</span>
+                                    <button onClick={() => handleQuantityChange(item.id, item.format, item.quantity + 1)} className={styles.quantityBtn}>+</button>
+                                </div>
+                                <div onClick={() => handleRemoveItem(item.id, item.format)}>
+                                    Supprimer
+                                </div>
+                            </div>
+                            <div className={styles.itemTotalPrice}>
+                                {(item.price * item.quantity).toFixed(2)} €
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+            <div className={styles.totalContainer}>
+                <h3>Total :</h3>
+                <p>
+                    {cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)} €
+                </p>
             </div>
-          ))}
+            
+            {cartItems.length > 0 && (
+                <div className={styles.cartActions}>
+                    <Button onClick={handleClearCart} variant="clear">Vider le panier</Button>
+                    <Button onClick={handleCheckout} variant="addToCart">Finaliser la commande</Button>
+                </div>
+            )}
         </div>
-        <h3>Total : ${total}</h3>
-        <button>Passer à la caisse</button>
-      </div>
     );
-  };
-  export default Cart;
-  
+}
