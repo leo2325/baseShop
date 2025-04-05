@@ -42,8 +42,102 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 COMPONENTS:
 
-    BANNERS: Le composants banners sont des composants prêt à être ajoutés à une page selon les envies.
+    + HEADER :
+        !!! Ces composants sont enfait des banners ? 
+        + aboutus :
+            - Contacts.js : 
+            - FAQ.js : 
+            - Livraison.js : 
+            - Presentations.js :
+            - SocialMedias_links.js : 
+        - Header.js : 
+
+    + FOOTER :
+    
+    + CART : 
+        - CartIcon.js : 
+        - Cart.js : 
+    
+    + ORDER : 
+    
+    + PRODUCTS : 
+        + ProductCard : 
+            - ProductCard.js :
+        + ProductDetails : 
+            - Caroussel.js : 
+            - Description : 
+            - DetailsToggle : 
+            - FormatSelector : 
+        - index.js : 
+        - ProductDetailsView : 
+
+    + USER : 
+
+    !!! Login & Register fonctionnent ensemble via AuthToggle. 
+    ! Les mettre dans un dossier ? 
+    ! Renommer AuthToggle ?
+        - Login.js : !!! créer un elements/input à utiliser pour les différents composants
+            -> login form
+        - Register.js : !!! créer un elements/input à utiliser pour les différents composants
+            -> inscription form
+        - AuthToggle.js : 
+
+    !!! Accessible via la page profil.
+    ! Mettre dans un dossier ? 
+        - UserProfil.js : !!! créer un elements/input à utiliser pour les différents composants 
+            -> user modifier
+        - PastOrders.js : !!! créer un elements/input à utiliser pour les différents composants 
+            -> order research
+
+
+    + ELEMENTS : Des composants réutilisables, stylisé avec différentes classes.
+
+        - buttons : composant bouton.
+        - modals : affichage d'une modal.
+
+
+    + BANNERS : Le composants banners sont des composants prêt à être ajoutés à une page selon les envies.
+        
+        !!! RENOMMER BANNERSINTROS
         - bannersIntros: En début de chaque page, fond d'écran image. (Suggestion contenu: poser une question au consommateur, et apporter une réponse.)
-        - productsSelection: Swiper d'une séléction de produits, 3 tailles différentes (exemple:          NewProducts, BestSeller, ClassicsProducts...)
+        
+        !!! RENOMMER PRODUCTSSELECTION -> BANNERSWIPER...
+        - productsSelection: Swiper d'une séléction de produits, 3 tailles différentes (exemple:          
+        NewProducts, BestSeller, ClassicsProducts...)
+        
+        !!! RENOMMER SMALLTOP -> BANNERS...
         - smallTop: bandeau small height tout en haut du body (exemple: ShippingFree, PromoSeason, CodePromo...)
         
+
+
+
+
+
+
+
+
+
+Sur la page d'acceuil,
+l'utilisateur doit pouvoir : 
+    HEADER
+        - Ouvrir le menu
+            . en cliquant sur l'icône de menu
+        - Ouvrir la modale panier
+            . en cliquant sur l'icône panier
+        - Ouvrir la modale user
+            . en cliquant sur l'icône user
+
+Sur la page d'acceuil,
+l'utilisateur doit pouvoir : 
+
+Sur la page d'acceuil,
+l'utilisateur doit pouvoir : 
+
+Sur la page d'acceuil,
+l'utilisateur doit pouvoir : 
+
+Sur la page d'acceuil,
+l'utilisateur doit pouvoir : 
+
+Sur la page d'acceuil,
+l'utilisateur doit pouvoir : 
