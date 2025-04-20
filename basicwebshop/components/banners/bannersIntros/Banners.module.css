@@ -9,18 +9,15 @@
     justify-content: center;
     align-items: center;
 }
-
 .mainTitle, .backgroundImage h3 {
     position: relative;
     padding: .8rem;
-    color: var(--first-color);
+    color: var(--first-color-light);
     font-family: 'MainTitleFont', sans-serif; 
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 2px 8px 4px rgba(0, 0, 0, 0.7);
-    z-index: 1;
+    text-shadow: .2rem .6rem .4rem var(--second-color-dark);
 }
-
 .mainTitle {    
     padding: .8rem;
     font-size: 4rem;
@@ -28,7 +25,6 @@
 .sloganTitle {
     font-size: 2.4rem;
 }
-
 .discoverText {
     position: relative;
     color: var(--first-color);
@@ -36,9 +32,6 @@
     font-size: 1.2rem;
     text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.5);
 }
-
-
-
 .introductionContainer {
     position: relative;
     height: 240px;
@@ -49,8 +42,9 @@
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    box-shadow: 0 .1rem .2rem var(--second-color);
 
+}
 .introductionContainer:hover {
     transform: scale(1.03); /* Légère mise en avant au survol */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Effet de profondeur */

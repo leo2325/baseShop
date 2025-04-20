@@ -109,13 +109,12 @@
     align-items: center;
 }
 .formatList p {
-    border: none;
     border-radius: 2rem;
     cursor: pointer;
-    color: var(--second-color);
+    color: var(--second-color-dark);
     font-family: 'TxtThinFont', sans-serif;
     font-size: .8rem;
-    padding: 1rem;
+    padding: .8rem;
     margin: 0 auto;
     transition: background-color 0.3s;
 }
@@ -134,8 +133,10 @@
 
 .selectedFormat {
     font-weight: bold;
-    background-color: var(--fifth-color);
-    color: var(--second-color);
+    background-color: var(--forth-color-light);
+    border-bottom: .1rem solid var(--forth-color);
+    border-top: .1rem solid var(--forth-color);
+    box-shadow: 0 .1rem .3rem var(--forth-color-dark);
 }
 
 /*=================    QUANTITY SELECTOR    =================*/
@@ -151,7 +152,7 @@
     width: 4rem;  
     height: 4rem;
     background-color: var(--first-color);
-    color: var(--forth-color);
+    color: var(--forth-color-dark);
     border: none;
     border-radius: 4rem;
     font-size: 1.4rem;
@@ -159,13 +160,10 @@
 }
 /*HOVER*/
 .quantityBtn:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .quantityValue {
-    background-color: var(--first-color);
-    color: var(--second-color);    
-    padding: 0.4rem 0.8rem;
-    font-family: 'Txt ThinFont', sans-serif;
-    font-size: 1.2rem;
-    text-align: center;
+    color: var(--second-color-dark);    
+    font-size: 1rem;
+    text-shadow: var(--forth-color-light);
 }

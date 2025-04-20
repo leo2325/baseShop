@@ -1,0 +1,50 @@
+.checkoutContainer h1 {
+    width: 100%;
+    margin-bottom: 1.6rem;
+    padding: 1.8rem auto;
+    color: var(--second-color);
+    text-shadow: 0 0 .1rem var(--fifth-color);
+    font-size: 1.6rem;
+    font-family: 'MainTitleFont', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+
+.summary {
+    width: 100%;
+    padding: 1.6rem;
+}
+.summary h2 {
+    width: 100%;
+    color: var(--second-color);
+    text-shadow: 0 0 .1rem var(--fifth-color);
+    font-size: 1.2rem;
+    font-family: 'TxtFont', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+.summary ul {
+    width: 80%;
+    margin: .8rem;
+    padding: .8rem;
+    background-color: var(--first-color-light);
+    color: var(--second-color-dark);
+    border-radius: .4rem;
+}
+.summary li {
+    list-style: none;
+    font-family: 'TxtThinFont', sans-serif;
+    font-size: .8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.totalCheckout {
+    width: 100%;
+    font-family: 'TxtFont';
+    font-size: 1.4rem;
+    text-align: center;
+}

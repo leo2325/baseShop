@@ -1,13 +1,11 @@
-import styles from './Banners.module.css';
+import BannerIntro from './BannerIntro';
 
 export default function BannerPecanShop() {
     return (
-        <div 
-            className={styles.backgroundImage}
-            style={{ backgroundImage: "url('/images/background4.jpg')" }}
-        >
-            <h2 className={styles.mainTitle}>Noix de pécan</h2>
-            <h3 className={styles.sloganTitle}>Enrobées avec amour</h3>
-        </div>
+        <BannerIntro 
+            backgroundImage="/images/background4.WebP"
+            mainTitle="Noix de pécan"
+            sloganTitle="Enrobées avec amour"
+        />
     );
 }

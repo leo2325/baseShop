@@ -1,0 +1,95 @@
+/* === BASE BUTTON === */
+.button {
+    border: none;
+    font-family: 'MainTitleFont', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* === SIZES === */
+.large {
+    width: 100%;
+    margin: 0.8rem auto;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.small {
+    background-color: var(--first-color);
+    color: var(--second-color);
+    width: 88%;
+    margin: 0.4rem auto;
+    border-radius: 2.4rem;
+    font-family: 'TxtFont', sans-serif;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
+
+
+/* =====================  VARIANTS  ====================*/
+ .validationStyle, .dashboardAccess, .cancelationStyle, .infosModifier {
+    width: 64%;
+    min-height: 2.4rem;
+    margin: .8rem auto;
+    color: var(--second-color);
+    border-radius: 2.4rem;
+    box-shadow: 0 .2rem .2rem var(--second-color);
+}
+.validationStyle {background-color: var(--forth-color-light);}
+.cancelationStyle {background-color: var(--fifth-color-light);}
+.dashboardAccess {background-color: var(--first-color);}
+.infosModifier {background-color: var(--first-color);}
+    .validationStyle:hover, .dashboardAccess:hover, .dashboardAccess:hover, .infosModifier:hover {
+        box-shadow: none;
+    }
+    .validationStyle:hover {background-color: var(--forth-color);}
+    .cancelationStyle:hover {background-color: var(--fifth-color);}
+    .dashboardAccess:hover {background-color: var(--first-color-dark);}
+    .infosModifier:hover {background-color: var(--first-color-dark);}
+/***************** Link style *****************/
+.link {
+    width: 100%;
+    background-color: transparent;
+    color: var(--second-color-light);
+    min-height: 2.4rem;
+    font-family: 'TxtFont', sans-serif;
+}
+.link:hover {color: var(--second-color-dark);}
+/**********************************************/
+/************** Close modal ***************/
+.closeModal {
+    height: 4rem;
+    background-color: var(--first-color);
+    color: var(--second-color);
+    font-family: 'TxtFont', sans-serif;
+    font-size: 2.8rem;
+    text-shadow: 0 .1rem var(--fifth-color);
+    position: absolute;
+    top: 0;
+    right: 1rem;
+}
+/******************************************/
+
+/* Go back */
+.goBack {
+    background-color: var(--first-color);
+    color: var(--second-color);
+    width: 72%;
+    padding: 0.8rem;
+    margin: 0.8rem auto;
+}
+.goBack:hover {
+    background-color: var(--fifth-color);
+    transform: scale(1.05);
+    box-shadow: 0 0.2rem 0.4rem var(--second-color);
+}
+.goBack svg {
+    padding-left: 0.8rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+}

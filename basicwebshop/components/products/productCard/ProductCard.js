@@ -3,7 +3,8 @@ import { selectProduct } from '@/app/store/productSlice';
 import Image from 'next/image';
 import Button from '../../elements/buttons/Btn';
 
-import styles from '../ProductsCards.module.css';
+// Import du fichier de styles spécifique à ProductCard
+import styles from './productCard.module.css';
 
 export default function ProductCard({ product, size = 'medium' }) {
     const dispatch = useDispatch();
@@ -18,6 +19,8 @@ export default function ProductCard({ product, size = 'medium' }) {
         dispatch(selectProduct(product)); // Stocke le produit sélectionné dans Redux
     };
 
+    const basePrice = product.prices?.find(p => p.format === "100g");
+
     return (
         <div className={`${styles.card} ${sizeClass}`} onClick={handleClick}>
             <Image 
@@ -29,7 +32,10 @@ export default function ProductCard({ product, size = 'medium' }) {
             />
             <h3 className={styles.name}>{product.name}</h3>
             <p className={styles.span}>à partir de</p>
-            <p className={styles.price}><strong>{product.price}€</strong> /100g</p>
+            <p className={styles.price}>
+                <strong className={styles.priceStrong}>{basePrice?.price}€</strong> 
+                /{basePrice?.format}
+            </p>
         </div>
     );
 }

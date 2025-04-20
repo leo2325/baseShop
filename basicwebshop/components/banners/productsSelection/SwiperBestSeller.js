@@ -7,7 +7,7 @@ import "swiper/css";
 import { useSelector, useDispatch } from "react-redux";
 import { selectProduct } from "@/app/store/productSlice";
 import ProductCard from "../../products/productCard/ProductCard";
-import styles from "../../products/ProductsCards.module.css";
+import styles from "./productsSelection.module.css";
 
 export default function BestSeller() {
     const dispatch = useDispatch();

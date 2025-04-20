@@ -1,0 +1,169 @@
+/* ========================== UTILITAIRES ========================== */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-bold { font-weight: bold; }
+.text-center { text-align: center; }
+.margin-auto { margin: 0 auto; }
+.padding-small { padding: .8rem; }
+
+.errorMessage {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ========================== TITRES ========================== */
+.title {
+    width: 100%;
+    margin: .4rem auto 0;
+    color: var(--forth-color);
+    font-family: 'MainTitleFont', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* ========================== COMPOSANT DESCRIPTION ========================== */
+ /* === ProductDetails === */
+.descriptionElements_container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ProductDetails_title {
+    width: 60%;
+    margin: 0 auto;
+    font-family: 'MainTitleFont', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--second-color);
+}
+
+.productDescription {
+    margin: .8rem auto;
+    font-family: 'TxtThinFont', sans-serif;
+    font-size: 1rem;
+    text-align: justify;
+    color: var(--second-color);
+}
+
+.productDetails_btn {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ========================== FORMAT SELECTOR ========================== */
+ /* === ProductDetails Format Selector === */
+.formatSelector {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.formatContainer {
+    width: 100%;
+}
+
+.formatTitle{
+    width: 100%;
+    margin: 0 auto;
+    color: var(--second-color);
+    font-family: 'TxtFont', sans-serif;
+    font-size: 1.2rem;
+}
+
+.activeFormat {
+    background-color: var(--third-color);
+    color: white;
+}
+
+.formatList {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    background-color: var(--first-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.formatList p {
+    border: none;
+    border-radius: .4rem;
+    cursor: pointer;
+    color: var(--second-color);
+    font-family: 'TxtThinFont', sans-serif;
+    font-size: .8rem;
+    padding: 1rem;
+    margin: .4rem auto;
+    transition: background-color 0.3s;
+    font-family: 'TxtFont', sans-serif;
+}
+
+.formatList p:hover {
+    transform: scale(1.2);    
+}
+
+/* ========================== MODAL ========================== */
+ /* === Modal === */
+.modalBackdrop {
+    position: absolute;
+    top: 4.8rem;
+    left: 0;
+    width: 100%;
+    padding: .4rem 1.6rem;
+    background-color: var(--first-color);
+    z-index: 700;
+}
+
+.ProductDetails_container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ========================== SWIPER CONTAINER ========================== */
+.container {
+    margin: 0 auto;
+    padding: 1.6rem;
+    background-color: var(--first-color);
+}
+
+/* ========================== CONFIRMATION MESSAGE ========================== */
+.confirmationMessage {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.selectedFormat {
+    font-weight: bold;
+    background-color: var(--fifth-color);
+    color: var(--second-color);
+}
+
+/* ========================== PROMOTION SWIPER ========================== */
+.promotionSwiper_container {
+    width: 72%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.promotionSwiper_container .title {
+    width: 100%;
+    margin: 0 auto;
+    color: var(--forth-color);
+    font-family: 'MainTitleFont', sans-serif;
+    font-size: .8rem;
+    text-align: center;
+}
+

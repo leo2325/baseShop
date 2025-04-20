@@ -1,0 +1,49 @@
+.profileContainer {
+    width: 100%;
+    padding: 1.6rem 0;
+}
+.infoSection_container {
+    width: 88%;
+    margin: 2.4rem auto;
+    border-radius: 1.2rem;
+    border: .1rem solid var(--first-color-dark);
+}
+.infoSection {
+    padding: 1rem;
+}
+.infoSection_content {
+    width: 100%;
+    height: 2.4rem;
+    margin: .6rem auto;
+    display: flex;
+    flex-direction: row;
+    margin: .4rem auto;
+    font-size: .8rem;
+    color: var(--second-color-light);
+}
+.infoSection_content label {
+    width: 36%;
+    font-family: 'TxtFont', sans-serif;
+    text-align: left;
+}
+.infoSection_content p {
+    width: 72%;
+    font-family: 'TxtThinFont', sans-serif;
+    text-align: center;
+}
+/*---------------------------------------------*/
+.hello_container {
+    width: 100%;
+    text-align: center;
+    font-family: 'TxtFont', sans-serif;
+    font-size: .8rem;
+}
+.hello_container p {
+    color: var(--second-color);
+    font-size: .8rem;
+}
+.hello_container p strong {
+    color: var(--forth-color);
+    font-size: 1rem;
+}
+/*---------------------------------------------*/

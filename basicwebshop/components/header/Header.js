@@ -2,12 +2,15 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-
+import { useSelector } from 'react-redux'; // Import Redux pour récupérer l'utilisateur
 import Link from 'next/link';
 import AuthToggle from '../user/AuthToggle';
 import SocialMedias_links from './aboutus/SocialMedias_links';
 import { ShoppingBagIcon, UserIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'; 
 import Button from '../elements/buttons/Btn';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 
 import Livraison from './aboutus/Livraison'; 
 import FAQ from './aboutus/FAQ';  
@@ -19,45 +22,45 @@ import styles from './Header.module.css';
 export default function Header() {
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isUserOpen, setIsUserOpen] = useState(false);
     
-    const [showLivraison, setShowLivraison] = useState(false); // État pour toggle Livraison
-    const [showFAQ, setShowFAQ] = useState(false); // État pour toggle FAQ
-    const [showContacts, setShowContacts] = useState(false); // État pour toggle Contacts
+    const [showLivraison, setShowLivraison] = useState(false);
+    const [showFAQ, setShowFAQ] = useState(false);
+    const [showContacts, setShowContacts] = useState(false);
+
+    const { user, isAuthenticated } = useSelector((state) => state.user); // Récupérer utilisateur connecté
 
     const toggleLoginModal = () => {
         setIsLoginOpen(!isLoginOpen);
     };
-
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
     };
-
     const closeNav = () => {
         setIsNavOpen(false);
     };
+    const toggleUserIcon = () => {
+        setIsUserOpen(!isUserOpen);
+    };    
 
-    // Toggle pour afficher/masquer Livraison
     const handleToggleLivraison = () => {
         setShowLivraison(!showLivraison);
-        setShowFAQ(false); // Fermer FAQ si on ouvre Livraison
-        setShowContacts(false); // Fermer Contacts si on ouvre Livraison
+        setShowFAQ(false);
+        setShowContacts(false);
     };
 
-    // Toggle pour afficher/masquer FAQ
     const handleToggleFAQ = () => {
         setShowFAQ(!showFAQ);
-        setShowLivraison(false); // Fermer Livraison si on ouvre FAQ
-        setShowContacts(false); // Fermer Contacts si on ouvre FAQ
+        setShowLivraison(false);
+        setShowContacts(false);
     };
 
-    // Toggle pour afficher/masquer Contacts
     const handleToggleContacts = () => {
         setShowContacts(!showContacts);
-        setShowLivraison(false); // Fermer Livraison si on ouvre Contacts
-        setShowFAQ(false); // Fermer FAQ si on ouvre Contacts
+        setShowLivraison(false);
+        setShowFAQ(false);
     };
 
-    // Bloquer le scroll du body lorsque le menu est ouvert
     useEffect(() => {
         if (isNavOpen) {
             document.body.classList.add(styles.noScroll);
@@ -70,18 +73,18 @@ export default function Header() {
         <header className={styles.header}>  
             
             <div className={styles.headerTop}>    
-                <button onClick={toggleNav}>
+                <Button onClick={toggleNav} className={styles.IconNav}>
                     {isNavOpen ? (
                         <XMarkIcon className={styles.icon} />
                     ) : (
                         <Bars3Icon className={styles.icon} />
                     )}
-                </button>
+                </Button>
 
                 <Link href="/">   
                     <Image 
                         src="/images/Logo.jpg" 
-                        alt="Pécanrobées"
+                        alt="Pécan enrobées"
                         width={50} 
                         height={50} 
                         className={styles.logo}
@@ -89,9 +92,24 @@ export default function Header() {
                 </Link> 
                 
                 <nav className={styles.topNav}>    
-                    <Button onClick={toggleLoginModal}>
-                        <UserIcon className={styles.icon} />
-                    </Button>    
+                    {/* Si connecté, afficher "Hello {name}", sinon l'icône utilisateur */}
+                    {isAuthenticated ? (
+                        <span className={styles.welcomeMessage}>
+                            <p>Hello</p>
+                            <p>{user.name}</p> 
+                        </span>
+                    ) : (
+                    
+                    <Button className={styles.IconNav} onClick={() => { toggleLoginModal(); toggleUserIcon(); }}>
+                        {isUserOpen ? (
+                            <FontAwesomeIcon icon={faUserTie} />
+                        ) : (
+                            <FontAwesomeIcon icon={faUser} />
+                        )}
+                    </Button>
+                    
+                    )}
+                    
                     <CartIcon />
                 </nav>
             </div>
@@ -107,10 +125,9 @@ export default function Header() {
                     </div>
                 </nav>   
 
-                {/* Affichage conditionnel des composants Livraison, FAQ et Contacts */}
                 {showLivraison && <Livraison />}
                 {showFAQ && <FAQ />}
-                {showContacts && <Contacts />} {/* Affiche le composant Contacts de manière conditionnelle */}
+                {showContacts && <Contacts />}
                 
                 <SocialMedias_links />
             </div>

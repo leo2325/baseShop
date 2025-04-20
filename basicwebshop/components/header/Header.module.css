@@ -6,19 +6,20 @@ body.noScroll {
 }
 .header {
     width: 100%;
-    background-color: var(--first-color);    
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: space-between;
+    align-items: center;   
 }
 .headerTop {
     width: 100%;
-    margin: 0 auto;
+    background-color: var(--first-color);    
+    padding: 1rem 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000; 
 }
 .title {
     color: var(--second-color);
@@ -30,15 +31,18 @@ body.noScroll {
     display: flex;
     justify-content: space-between; 
     align-items: center;
+    z-index: 1000; 
 }
 /* BUTTONS */
-.header button {  
-    background-color: transparent;  
+.IconNav {  
     border: none;     
     padding: .8rem;
-    cursor: pointer;
+    cursor: pointer;    
+    background-color: var(--first-color);
+
 }
-.header button:hover {
+/*HOVER*/
+.IconNav:hover {
     transform: scale(1.2);    
 }
 
@@ -57,8 +61,8 @@ body.noScroll {
     width: 100%;
     height: calc(100vh - 4rem); 
     background-color: var(--first-color);
-    z-index: 750;
     overflow-y: auto; /* Si trop de contenu */
+    z-index: 1000; 
 }
 
 /* Menu général */
@@ -92,13 +96,21 @@ body.noScroll {
 
 
 .subMenuWrapper button{
+    background-color: var(--first-color);
+    color: var(--forth-color);
     font-family: 'TxtFont', sans-serif;
-    color: var(--third-color);
+    border: none;     
+    padding: .8rem;
+    cursor: pointer; 
 }
 /*HOVER*/
 .subMenuWrapper button:hover {
     transform: scale(1.1);    
 }
+
+
+
+
 /* Animation de glissement du menu */
 @keyframes slideIn {
     from {
@@ -122,7 +134,8 @@ body.noScroll {
     bottom: 0;
     left: 0;
     transform: translateX(-100%); /* Le menu commence caché */
-    transition: transform 0.3s ease-in-out;    background-color: var(--first-color);
+    transition: transform 0.3s ease-in-out;    
+    background-color: var(--first-color);
 }
 .navWrapper.open {
     animation: slideIn 0.5s forwards; /* Animation pour glisser */
@@ -137,16 +150,22 @@ body.noScroll {
 
 
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: var(--first-color);
-}
 
-.title {
-    font-family: 'MainTitleFont', sans-serif;
-    color: var(--second-color);
-    font-size: 1.5rem;
+
+
+
+
+
+
+
+
+.welcomeMessage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'TxtThinFont', sans-serif;
+    font-size: .8rem;
+    margin: 0 1rem;
+    
 }

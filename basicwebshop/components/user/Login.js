@@ -1,75 +1,86 @@
 "use client";
 
-import { useState } from 'react';
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+import { loginRequest, loginSuccess, loginFailure } from "@/app/store/userSlice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBoxOpen, faBarcode } from "@fortawesome/free-solid-svg-icons";
 import Button from '../elements/buttons/Btn';
+import Input from "../elements/inputs/Input";
+import users from "../../datas/usersDatas";
+import styles from "./auth.module.css";
 
-import styles from './Auth.module.css';
+export default function Login({ onSwitch }) {
+    const dispatch = useDispatch();
+    const router = useRouter();
 
-export default function Login({ isOpen, onClose, onSwitch }) {
-    const [isConnected, setIsConnected] = useState(false);
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const { user, isAuthenticated, loading, error } = useSelector((state) => state.user);
 
-    const handleLogin = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const handleLogin = async () => {
         if (!username || !password) {
-            alert("Merci de remplir tous les champs.");
-            return;
+        setErrorMessage("Merci de remplir tous les champs.");
+        return;
         }
-        setIsConnected(true);
+
+    dispatch(loginRequest());
+    setErrorMessage("");
+
+    try {
+        const foundUser = users.find((user) => user.name === username && user.password === password);
+
+        if (foundUser) {
+            dispatch(loginSuccess(foundUser));
+        } else {
+            dispatch(loginFailure("Identifiants incorrects"));
+            setErrorMessage("Identifiants incorrects !"); // Affichage de l'erreur
+        }
+        } catch (err) {
+            setErrorMessage("Une erreur est survenue. Veuillez réessayer.");
+            dispatch(loginFailure("Une erreur est survenue"));
+        }
     };
 
-    const handleLogout = () => {
-        setIsConnected(false);
-        setUsername('');
-        setPassword('');
-    };
-
-    if (!isOpen) return null;
+    const handleSeeOrders = () => router.push("/orders");
 
     return (
-        <div className={styles.overlay}>
-            <div className={styles.popup}>
-                
-                
-                <div className={styles.modaleHeader_container}>    
-                    <Button variant="closeModal" onClick={onClose}>
-                        <p>Cacher l'utilisateur</p>
-                        <FontAwesomeIcon icon={faXmark} className="icon"/> 
+        <div className={styles.content}>
+            {!isAuthenticated && (
+                <>
+                    <Input
+                        label="Nom d'utilisateur"
+                        name="username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        layout="column"
+                    />
+                    <Input
+                        label="Mot de passe :"
+                        name="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        layout="column"
+                    />
+                    {errorMessage && <p className={styles.error}>{errorMessage}</p>}
+                </>
+            ) }
+            {!isAuthenticated && (
+                <>
+                    <Button onClick={handleLogin} size="medium" variant="validationStyle"  disabled={loading}>
+                        {loading ? "Connexion..." : "Se connecter"}
                     </Button>
-                </div>
-
-                
-                <h2 className={styles.title}> {isConnected ? `Bienvenue ${username}` : "Connexion"} </h2>
-
-                <div className={styles.content}>
-                    {!isConnected && (
-                        <>
-                            <div className={styles.inputContainer}>
-                                <label>Nom d'utilisateur :</label>
-                                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                            </div>
-
-                            <div className={styles.inputContainer}>
-                                <label>Mot de passe :</label>
-                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                            </div>
-                        </>
-                    )}
-
-                    <button className={styles.button} onClick={isConnected ? handleLogout : handleLogin}>
-                        {isConnected ? "Se déconnecter" : "Se connecter"}
-                    </button>
-
-                    {!isConnected && (
-                        <>
-                            <p className={styles.link}>Mot de passe oublié ?</p>
-                            <p className={styles.link} onClick={onSwitch}>Vous ne possédez pas encore de compte ?</p>
-                        </>
-                    )}
-                </div>
-            </div>
+                    <Button variant="link" size="medium">
+                        Login ou mot de passe oublié ?
+                    </Button>
+                    <Button variant="link" size="medium" onClick={onSwitch}>
+                        Pas encore de compte ?
+                    </Button>
+                </>
+            )}
         </div>
     );
 }

@@ -1,0 +1,94 @@
+/* ========================== PRODUCT CARD ========================== */
+.card {
+    width: 100%;
+    height: auto;
+    border-radius: .4rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.03);    
+}
+
+.card:hover::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); 
+    z-index: 1;
+}
+
+/* Taille des cartes */
+.card--small { 
+    width: 100%;
+}
+.card--medium { 
+    width: 100%; 
+}
+.card--large { 
+    width: 100%; 
+}
+
+/* === Image dans la carte === */
+.image {
+    width: 96%;
+    object-fit: cover;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+}
+
+.card--small .image { height: auto; }
+.card--medium .image { height: auto; }
+.card--large .image { height: auto; }
+
+/* === Texte dans la carte === */
+.name {
+    font-family: 'MainTitleFont', sans-serif;
+    color: var(--second-color-light);
+    text-align: center;
+    margin: .1rem auto 0;
+}
+
+.card--small .name { font-size: .8rem; }
+.card--medium .name { font-size: 1rem; }
+.card--large .name { 
+    font-size: 1.2rem;
+    text-shadow: 0 .1rem .1rem var(--third-color);
+    text-align: left;
+    margin: .8rem auto 1.2rem;
+}
+
+.span {
+    font-family: 'TxtThinFont', sans-serif;
+    color: var(--fifth-color);
+    text-align: center;
+}
+
+.card--small .span { font-size: .6rem; }
+.card--medium .span { font-size: .6rem; }
+.card--large .span { font-size: 1.2rem; }
+
+/* === Prix === */
+.price {
+    font-family: 'MainTitleFont', sans-serif;
+    color: var(--forth-color-dark);
+    text-align: center;
+}
+
+.priceStrong {
+    font-family: 'MainTitleFont', sans-serif;
+    color: var(--red-color);
+    text-align: center;
+    font-size: 1rem;
+}
+
+.card--small .price { font-size: .8rem; }
+.card--medium .price { font-size: 1rem; }
+.card--large .price { font-size: 1.6rem; }

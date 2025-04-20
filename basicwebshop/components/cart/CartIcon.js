@@ -1,43 +1,33 @@
-"use client";
-
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-
-import { ShoppingBagIcon } from '@heroicons/react/24/outline'; 
-
+import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import Modal from "../elements/modals/Modal";  // Ton composant Modal
 import Button from '../elements/buttons/Btn';
 import Cart from './Cart';
-import styles from './Cart.module.css';
+import { useModal } from '../../hooks/useModal'; // Utiliser le hook
+import styles from './cart.module.css';
 
 const CartIcon = () => {
-    const [isOpen, setIsOpen] = useState(false);    
+    const { isOpen, openModal, closeModal } = useModal();  // Utilisation du hook
     const cart = useSelector((state) => state.cart.cart) || [];
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
     return (
         <div className={styles.cartIconContainer}>
-            <div className={styles.iconWrapper} onClick={() => setIsOpen(!isOpen)}>
-                <ShoppingBagIcon className={styles.icon} />
+            <Button className={styles.iconWrapper} onClick={isOpen ? closeModal : openModal}>
+                <FontAwesomeIcon icon={faBagShopping} className={styles.icon} />
                 {totalItems > 0 && (
                     <span className={styles.itemCount}>{totalItems}</span>
                 )}
-            </div>
+            </Button>
 
             {isOpen && (
-                <div className={styles.modalOverlay} onClick={() => setIsOpen(false)}>
-                    <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                        <div className={styles.modaleHeader_container}>
-                            <Button variant="closeModal" onClick={() => setIsOpen(false)}>
-                                Cacher le panier
-                                <FontAwesomeIcon icon={faXmark} className="icon"/> 
-                            </Button>
-                        </div>
-
-                        <Cart />
-                    </div>
+            <Modal isOpen={isOpen} onClose={closeModal} title="Mon Panier">
+                <div className={styles.modalContent}>
+                <Cart />
                 </div>
+            </Modal>
             )}
         </div>
     );

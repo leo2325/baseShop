@@ -5,16 +5,11 @@
 }
 @font-face {
     font-family: 'TxtFont';
-    src: url('/fonts/caviarDreams/CaviarDreams_Bold.ttf') format('truetype');
+    src: url('/fonts/CaviarDreams_Bold.ttf') format('truetype');
     font-style: normal;
 }
 @font-face {
     font-family: 'TxtThinFont';
-    src: url('/fonts/caviarDreams/CaviarDreams.ttf') format('truetype');
+    src: url('/fonts/CaviarDreams.ttf') format('truetype');
     font-style: normal;
-}
-@font-face {
-    font-family: 'coolveticaRgIt';
-    src: url('/fonts/coolveticaRgIt.otf') format('truetype');
-    font-style: italic;
 }

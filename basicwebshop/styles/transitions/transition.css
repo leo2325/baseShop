@@ -1,0 +1,38 @@
+/* transition.css */
+
+/* Le wrapper de la modale avec perspective 3D */
+.modalFlipWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  perspective: 1500px; /* Applique la perspective 3D */
+}
+
+/* Le conteneur du flip avec la transformation */
+.modalFlipInner {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  transform-style: preserve-3d; /* Permet l'effet 3D */
+  transition: transform 1s ease-in-out; /* Durée de la transition */
+}
+
+.flipped {
+  transform: rotateY(180deg); 
+}
+
+.modalFlipFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Positionner la face B pour qu'elle soit derrière pendant le flip */
+.modalFlipFace:nth-child(2) {
+  transform: rotateY(180deg); /* Applique le flip sur la face B */
+}

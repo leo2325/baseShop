@@ -1,101 +1,108 @@
 .cartContainer {
     width: 88%;
-    margin: 1.6rem auto;
-    background-color: var(--first-color);
+    margin: .8rem auto;
 }
-
-.title {    
-    font-family: 'MainTitleFont', sans-serif;
-    text-align: center;
+.cartContainer ul {
+    margin: 0 auto;
+    border: .1px solid var(--second-color-light);
+    border-radius: .4rem;
+    padding: .8rem;
+}
+/* ===================== intro panier ===================== */
+.cartSummary {
+    margin-bottom: 1.6rem;
+    font-family: 'TxtFont', sans-serif;
+}
+.cartSummary p {
     color: var(--second-color);
-    font-size: 1.6rem;
-    margin-bottom: 2.4rem;
+    font-size: .8rem;
 }
-
+.cartSummary span {
+    color: var(--red-color);
+    font-size: 1rem;
+}
+/* ======================================================== */
+/* ======================= CART ITEM ====================== */
 .cartItem {
-    width: 100%;
-    margin: .4rem auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--third-color);
+    margin: .8rem;
 }
-.cartItemElement {
-    height: 100%;
-}
-
-
-
-/* ========================== IMAGES ========================== */
-.imageContainer {
-    width: 25%;
-    height: auto;
-}
+/* ================ IMAGES ================ */
 .image {
-    max-width: 6rem;
+    max-width: 4rem;
     height: auto;
     object-fit: cover;
     border-radius: .4rem;
 }
-
-.details {    
-    width: 100%;
+/* == CONTAINER (style span par absence) == */
+.detailsCartItem {
+    min-height: 4rem;
+    color: var(--second-color);
     font-family: 'TxtFont', sans-serif;
+    font-size: .8rem;    
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content:space-between;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
 }
-.details div{    
+/* ================ TITLE ================= */
+.detailsCartItem h3 {     
+    font-size: 1rem;
+}
+/* ========== QUANTITY CONTROLS =========== */
+.quantityControls {
+    min-width: 6rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-}
-.cartItemElement h3 {        
-    color: var(--second-color);    
-    font-family: 'MainTitleFont', sans-serif;
-    font-size: 1rem;
-    text-align: center;
-}
-.cartItemElement p {    
-    color: var(--forth-color); 
-    font-size: 1rem;
-    text-align: center;
-}
-.quantityControls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    overflow: hidden;
 }
 .quantityBtn {
-    width: 100%;
-    padding: 1.2rem;
-    color: var(--forth-color);
+    min-width: 2rem;
+    background-color: var(--first-color);
+    border: none;
     cursor: pointer;
+}
+.quantityControls span{
+    min-width: 2rem;
+    color: var(--forth-color-dark)
+}
+/* ============= TOTAL PRICE ============== */
+.itemTotalPrice {
+    width: 100%;
+    font-size: 1rem;
+}
+/* ============ DELETE ITEM BTN =========== */
+.deleteBtn {
+    min-width: 2rem;
+    height: 1rem;
+    margin: 0 auto;  
+    color: var(--second-color);
+}
+/* ======================================== */
+/* ======================================================== */
+
+.totalContainer {
+    margin: .8rem auto;
+    display: flex;
+    justify-content: space-evenly;
+    color: var(--second-color);
+    font-family: 'MainTitleFont', sans-serif;
     font-family: 'TxtFont', sans-serif;
     font-size: 1.2rem;
 }
-/*HOVER*/
-.quantityBtn:hover {
-    transform: scale(1.1);
-}
-.quantityValue {    
-    color: var(--second-color);
-    font-family: 'TxtFont', sans-serif;
-    font-size: 1rem;
-}
-
-.totalContainer {
-    width: 80%;
-    margin: 0 auto;
+.totalContainer p {
+    margin: .8rem auto;
     display: flex;
-    justify-content: space-between;
-    padding-top: 1rem;
-    font-weight: bold;
-    color: var(--forth-color);
-    font-family: 'MainTitleFont';
+    justify-content: space-evenly;
+    color: var(--second-color);
+    font-family: 'MainTitleFont', sans-serif;
+    font-family: 'TxtFont', sans-serif;
     font-size: 1.2rem;
 }
 .emptyMessage {
@@ -103,122 +110,44 @@
     color: var(--third-color);
     font-weight: bold;
 }
-
-
-.itemTotalPrice {
-    font-family: "MainTitleFont", sans-serif;
-    font-size: 1.2rem;
-    color: var(--forth-color);
-}
-
-
-.checkoutButton {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-}
-
-.checkoutButton:hover {
-    transform: scale(1.1);
-    background-color: var(--primary-dark-color);
-}
-
-
-.cartContainer {
-}
-
+/*==========     CARTACTION     ==========*/
 .cartActions {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
+    margin: 2rem auto;
 }
-
-.removeButton {
-    background-color: red;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.cartActions p{
+    width: 100%;
+    margin: .8rem auto;
+    color: var(--second-color);
+    font-size: .8rem;
+    font-family: 'TxtThinFont', sans-serif;
+    text-align: center;
 }
-
-.checkoutButton {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-}
-
-.checkoutButton:hover {
-    transform: scale(1.1);
-    background-color: var(--primary-dark-color);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*==========     CARTICON     ==========*/
-.cartIconContainer {
-    position: relative;
-    cursor: pointer;
-}
-.iconWrapper {
-    position: relative;
-    display: inline-block;
-}
 .icon {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1rem;
+    height: 1rem;
     color: var(--second-color);
 }
+/*chiffre du compteur icone panier*/
 .itemCount {
-    position: absolute;
-    top: -0.4rem;
-    right: -0.4rem;
     background-color: var(--forth-color);
     color: white;
     border-radius: 50%;
     padding: 0.1rem 0.3rem;
     font-size: 0.6rem;
-    font-weight: bold;
 }
 /* ==================== MODALE ==================== */
 .modalOverlay {
     position: fixed;
-    top: 4.8rem;
+    top: 4.4rem;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
+    z-index: 900;
 }
 .modalContent {
     width: 100%;
-    height: 90%;
-    padding: .8rem;
-    background-color: var(--first-color);
+    height: 100%;
 }
 .modaleHeader_container {
     width: 100%;

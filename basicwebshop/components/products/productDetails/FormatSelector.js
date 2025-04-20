@@ -76,7 +76,7 @@ const ProductFormatSelector = ({ product }) => {
                 </div>
 
                 {/* Bouton d'ajout au panier */}
-                <Button size="medium" onClick={handleAddToCart}>
+                <Button onClick={handleAddToCart} variant="validationStyle" size="medium">
                     Ajouter au panier
                 </Button>
             </div>

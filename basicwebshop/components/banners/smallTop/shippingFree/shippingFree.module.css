@@ -1,66 +1,56 @@
 .container {
-    background-color: var(--fifth-color);
-    padding: .4rem 1rem;
-
-/*      
-    background-color: #ffeafc;
-    margin: 1rem;
-    border-radius: 1rem;
-    margin-top: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-*/
-    position: relative;
-    overflow: hidden;
-}
-
-.title {
-    display: none;
-/*
     width: 100%;
-    text-align: center;
-    margin: 1rem auto 0;
-    font-family: 'coolveticaRgIt', sans-serif; 
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    color: #0b255d;
-*/
-}
-
-.patch {
-    position: absolute;
-    top: -16px;
-    right: -8px;
-    background-color: var(--forth-color);
-    color: var(--first-color);
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    height: 4rem;
+    box-shadow: .4rem 0 .4rem var(--second-color-dark);
+    background-color: var(--fifth-color-light);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    text-transform: uppercase;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow: hidden;    
     font-family: 'TxtFont', sans-serif; 
-    font-weight: bold;
-    box-shadow: -2px 4px 4px rgb(15, 8, 77);
-    transform: rotate(-15deg); /* Effet patch incliné */
 }
-
-.content {
+.patch {
+    width: 5.6rem;
+    height: 5.6rem;
+    margin-top: -1rem;
+    margin-left: -.4rem;
+    background-color: var(--forth-color);
+    color: var(--first-color-light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: .8rem;
-    font-weight: bolder;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: .1rem 0 .1rem var(--second-color-dark);
+    box-shadow: -2px 4px 4px var(--second-color-dark);    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0%   { transform: rotateZ(-8deg); }
+    50%  { transform: rotateZ(-12deg);}
+    100% { transform: rotateZ(-8deg); }
+}
+.content {
+    width: 70%;
+    padding: 0 .4rem;
     color: var(--second-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+}
+.content p {
+    margin: 0;    
     text-transform: uppercase;
 }
-
-.content p {
-    width: 80%;
-    margin: 0;
-    font-family: 'TxtThinFont', sans-serif; 
-}
-
-.highlight {
-    color:  var(--forth-color);
+.content p strong {
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: bolder;
+}
+.highlight {
+    color:  var(--forth-color-dark);    
+    font-weight: bolder;
 }

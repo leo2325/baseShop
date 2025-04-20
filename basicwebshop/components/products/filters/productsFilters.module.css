@@ -1,0 +1,27 @@
+.filters {
+    width: 88%;
+    margin: .2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; 
+}
+
+.filters label {
+    font-family: 'TxtThinFont';
+    font-size: .8rem;
+    color: var(--second-color-light);
+    margin: 0;
+}
+
+.filters select {
+    font-family: 'TxtThinFont';
+    font-size: .8rem;
+    color: var(--second-color);
+    border: none;
+    margin: .2rem;
+}
+
+.filters .checkbox {
+    margin-left: .5rem;
+}

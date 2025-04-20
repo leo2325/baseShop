@@ -7,20 +7,20 @@ import 'swiper/css';
 import products from '@/datas/productsDatas';
 import ProductCard from '../../products/productCard/ProductCard';
 
-import styles from '../../products/ProductsCards.module.css';
+import styles from './productsSelection.module.css';
 
 export default function NewProducts() {
     const newProducts = products.filter(product => product.isNew);
 
     return (
         <div className={styles.promotionSwiper_container}>
-            <h3 className={styles.title}>Les Nouveautes</h3>
+            <h3 className={styles.title}>Nouveautes</h3>
 
             <Swiper
                 modules={[Autoplay]}
                 spaceBetween={4}
                 slidesPerView={3}
-                autoplay={{ delay: 3000 }}
+                autoplay={{ delay: 5000 }}
                 loop={true}
             >
                 {newProducts.map(product => (

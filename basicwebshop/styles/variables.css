@@ -3,30 +3,38 @@
 :root {
 
     /*===============     COLORS     ===============*/
-    --first-color: #fffcf5;
     --first-color-light: #ffffff;
+    --first-color: #fffcf5;
+    --first-color-dark: #e7e3da;
 
+    --second-color-light: #B56A43;
+    --second-color: #552D11;
+    --second-color-dark: #000000;
+    
+    --third-color-light: #EBD1BD;
+    --third-color: #E6C5A3;
+    --third-color-dark: #D5B696;
+    
+    --forth-color-light: #00ffd0;
+    --forth-color: #00d8b0;
+    --forth-color-dark: #008169;
+    
+    --fifth-color-light: #ffdcee;
+    --fifth-color: #d2639c;
+    --fifth-color-dark: #ffeafe;
 
-    --second-color: #000000;
-    --second-color-light: #616161;
-    
-    
-    --third-color: #ddaa64;
-    --third-color-dark: #a47e4a;
-    --third-color-light: #ffdcab;
-    
-    
-    --forth-color: #d80000;
-    --forth-color-dark: #720000;
-    --forth-color-light: #f64747;
-    
-    
-    --fifth-color: #ffeafe;
-    --fifth-color-dark: #b1a1b1;
-    --fifth-color-light: #ffffff;
+    --dark-color-light: #9b9b9b;
+    --dark-color: #1f1f1f;
+    --dark-color-dark: #000000;
 
-
-
+    /*          ROUGE (reserver pour les rejets, ou attirer l'oeil)          */
+    --red-color-light: #c36464;
+    --red-color: #ba0000;
+    --red-color-dark: #620000;
+    /*          VERT (reserver pour les autorisation)          */
+    --green-color-light: #64c379;
+    --green-color: #0cba00;
+    --green-color-dark: #00620b;
     /*===============     BUTTON:HOVER     ===============*/
     
 }
