@@ -7,6 +7,8 @@ import "swiper/css";
 import { useSelector, useDispatch } from "react-redux";
 import { selectProduct } from "@/app/store/productSlice";
 import ProductCard from "../../products/productCard/ProductCard";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFire } from "@fortawesome/free-solid-svg-icons";
 import styles from "./productsSelection.module.css";
 
 export default function BestSeller() {
@@ -31,14 +33,17 @@ export default function BestSeller() {
 
     return (
         <div className={styles.promotionSwiper_container}>
-            <h3 className={styles.title}>Les plus vendus</h3>
-
+            <h3 className={styles.title}>🔥Hot</h3>
             <Swiper
                 modules={[Autoplay]}
                 spaceBetween={4}
-                slidesPerView={4}
                 autoplay={{ delay: 5000 }}
                 loop={true}
+                breakpoints={{
+                    0: { slidesPerView: 4 },
+                    769: { slidesPerView: 2 },
+                    1024: { slidesPerView: 4 },
+                }} 
             >
                 {bestSellers.map((product) => (
                     <SwiperSlide key={product.id}>

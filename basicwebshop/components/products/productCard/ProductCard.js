@@ -31,11 +31,11 @@ export default function ProductCard({ product, size = 'medium' }) {
                 className={styles.image}
             />
             <h3 className={styles.name}>{product.name}</h3>
-            <p className={styles.span}>à partir de</p>
             <p className={styles.price}>
                 <strong className={styles.priceStrong}>{basePrice?.price}€</strong> 
                 /{basePrice?.format}
-            </p>
+            </p>            
+            <p className={styles.span}>Découvrir</p>
         </div>
     );
 }

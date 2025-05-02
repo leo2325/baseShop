@@ -38,3 +38,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* globals.css */
+body.modal-open {
+  overflow: hidden;
+  height: 100vh;
+}

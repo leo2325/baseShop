@@ -9,6 +9,8 @@ import { faBoxOpen, faBarcode } from "@fortawesome/free-solid-svg-icons";
 import Button from '../elements/buttons/Btn';
 import Input from "../elements/inputs/Input";
 import users from "../../datas/usersDatas";
+import usePasswordToggle from '@/hooks/usePasswordToggle';
+
 import styles from "./auth.module.css";
 
 export default function Login({ onSwitch }) {
@@ -20,6 +22,7 @@ export default function Login({ onSwitch }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const { inputType, showPassword, togglePassword } = usePasswordToggle();
 
     const handleLogin = async () => {
         if (!username || !password) {
@@ -52,24 +55,34 @@ export default function Login({ onSwitch }) {
             {!isAuthenticated && (
                 <>
                     <Input
-                        label="Nom d'utilisateur"
+                        label="Nom d'utilisateur *"
                         name="username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         layout="column"
                     />
                     <Input
-                        label="Mot de passe :"
+                        label="Mot de passe *"
                         name="password"
+                        type={inputType}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         layout="column"
                     />
+                    <label className={styles.togglePassword}>
+                    <input
+                        type="checkbox"
+                        checked={showPassword}
+                        onChange={togglePassword}
+                    />
+                        Afficher le mot de passe
+                    </label>
                     {errorMessage && <p className={styles.error}>{errorMessage}</p>}
                 </>
             ) }
             {!isAuthenticated && (
                 <>
+                    <p>* Champs obligatoire.</p>
                     <Button onClick={handleLogin} size="medium" variant="validationStyle"  disabled={loading}>
                         {loading ? "Connexion..." : "Se connecter"}
                     </Button>

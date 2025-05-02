@@ -1,6 +1,6 @@
 .productDetails_section {
     width: 100%;
-    margin: 0 auto;
+    margin: 1.2rem auto;
     background-color: var(--first-color);    
 }
 .sectionContent {
@@ -18,19 +18,31 @@
 /*=================    CAROUSSEL    =================*/
 .swiperContainer {
     height: auto;
-
 }
 .image {
     width: 100%;
+    border-radius: .4rem;
     height: auto;
     object-fit: contain;
 }
-
-
 .ProductDetails_img {
     width: 100%;
     margin: 0 auto;
 }
+
+/* Personnalisation des bullets de pagination Swiper */
+:global(.swiper-pagination) {
+    position: static !important;      
+    margin: .8rem auto;       
+}  
+:global(.swiper-pagination-bullet) {
+    background: var(--second-color-light);  
+    opacity: 0.5;
+}  
+:global(.swiper-pagination-bullet-active) {
+    background: var(--second-color);      
+    opacity: 1;
+}   
 
 /*=================    DESCRIPTION    =================*/
 .ProductDetails_title {
@@ -51,21 +63,16 @@
 
 /*=================    DETAILS TOGGLE    =================*/
 .toggleDescription_title {
-    margin: .4rem;
+    margin: 1.6rem auto;
     border-bottom: .1rem solid var(--second-color);
     color: var(--second-color);
     font-family: 'TxtFont';
     font-size: 1rem;
 }
-/*HOVER*/
-.toggleDescription_title:hover {
-    transform: scale(1.03);    
-}
-
 .toggleDescription_Content {
     width: 100%;
     list-style: none;
-    color: var(--third-color);
+    color: var(--second-color-light);
     font-family: 'TxtFont', sans-serif;
 }
 
@@ -166,4 +173,45 @@
     color: var(--second-color-dark);    
     font-size: 1rem;
     text-shadow: var(--forth-color-light);
+}
+
+
+
+
+
+
+
+
+@media (min-width: 769px) {
+    .productDetails_section {
+        width: 80%; 
+    }
+    .sectionContent {
+        width: 100%;
+    }
+    .ProductDetails_title {
+        font-size: 2.4rem;
+    }
+    .productDescription {
+        margin: 1.2rem auto;
+        font-size: 1.4rem;
+    }
+    .price {
+        font-size: 2.8rem;
+    }
+    .formatSelector {
+        margin: 1.6rem auto;
+    }
+    .formatList p {
+        font-size: 1.2rem;
+        padding: .8rem;
+    }
+    .quantityBtn {  
+        width: 8rem;  
+        height: 8rem;
+        font-size: 1.6rem;
+    }
+    .quantityValue {
+        font-size: 1.6rem;
+    }
 }

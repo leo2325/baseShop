@@ -4,7 +4,7 @@ export default function ProductsFilters({ sortOrder, setSortOrder, hideUnavailab
     return (
         <div className={styles.filters}>
             <label>
-                Trier par :
+                <p>Trier par :</p>
                 <select 
                     value={sortOrder} 
                     onChange={(e) => setSortOrder(e.target.value)}
@@ -16,7 +16,6 @@ export default function ProductsFilters({ sortOrder, setSortOrder, hideUnavailab
                     <option value="priceDesc">Prix décroissant</option>
                 </select>
             </label>
-
             <label>
                 <input 
                     type="checkbox" 
@@ -24,7 +23,7 @@ export default function ProductsFilters({ sortOrder, setSortOrder, hideUnavailab
                     onChange={(e) => setHideUnavailable(e.target.checked)}
                     className={styles.checkbox}
                 />
-                Cacher les produits indisponibles
+                <p>Cacher indisponible</p>
             </label>
         </div>
     );

@@ -4,168 +4,139 @@ body.noScroll {
     overflow: hidden;
     height: 100vh;
 }
+.headerInner {
+    display: none;
+}
 .header {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;   
+    background-color: var(--first-color);
 }
 .headerTop {
     width: 100%;
-    background-color: var(--first-color);    
-    padding: 1rem 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000; 
+    padding: 1rem 2rem;
+    z-index: 800;
 }
-.title {
-    color: var(--second-color);
-    font-family: 'MainTitleFont', sans-serif; 
-    font-size: 1.2rem;
+.logoWrapper img, .headerTop img {
+    width: 4rem;
+    height: auto;
 }
-/* Menu icônes en haut à droite */
 .topNav {
     display: flex;
-    justify-content: space-between; 
     align-items: center;
-    z-index: 1000; 
+    gap: 1rem;
 }
-/* BUTTONS */
-.IconNav {  
-    border: none;     
-    padding: .8rem;
-    cursor: pointer;    
-    background-color: var(--first-color);
-
-}
-/*HOVER*/
-.IconNav:hover {
-    transform: scale(1.2);    
-}
-
-.icon {
-    width: 1.4rem;
-    height: 1.4rem;    
+.IconNav {
     border: none;
+    background: none;
+    cursor: pointer;
+}
+.icon {
+    width: 1.6rem;
+    height: 1.6rem;
     color: var(--second-color);
 }
-
-/* Conteneur du menu (pour couvrir la hauteur restante) */
 .navWrapper {
     position: fixed;
-    top: 4.8rem; /* Hauteur du header */
+    top: 4.8rem;
     left: 0;
     width: 100%;
-    height: calc(100vh - 4rem); 
+    height: calc(100vh - 4.8rem);
     background-color: var(--first-color);
-    overflow-y: auto; /* Si trop de contenu */
-    z-index: 1000; 
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 600;
 }
-
-/* Menu général */
-.nav {
-    width: 100%;
-    color: var(--second-color);
-    font-family: 'TxtFont', sans-serif; 
-    font-size: 1.2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.nav a, .subMenuWrapper a {
-    width: 100%;
-    padding: .8rem;
-    text-decoration: none;
-}
-
-.subMenuWrapper {
-    width: 100%;
-    text-decoration: none;
-    font-family: 'TxtFont', sans-serif; 
-    font-size: .8rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-
-.subMenuWrapper button{
-    background-color: var(--first-color);
-    color: var(--forth-color);
-    font-family: 'TxtFont', sans-serif;
-    border: none;     
-    padding: .8rem;
-    cursor: pointer; 
-}
-/*HOVER*/
-.subMenuWrapper button:hover {
-    transform: scale(1.1);    
-}
-
-
-
-
-/* Animation de glissement du menu */
+.navWrapper.open { animation: slideIn 0.5s forwards; }
+.navWrapper.closed { animation: slideOut 0.5s forwards; }
 @keyframes slideIn {
-    from {
-        transform: translateX(-100%); /* Menu caché sur la gauche */
-    }
-    to {
-        transform: translateX(0); /* Menu au centre de l'écran */
-    }
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
 }
 @keyframes slideOut {
-    from {
-        transform: translateX(0); /* Menu au centre de l'écran */
-    }
-    to {
-        transform: translateX(-100%); /* Menu caché sur la gauche */
-    }
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
 }
-/* Ajoutez une classe pour l'animation de glissement */
-.navWrapper {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    transform: translateX(-100%); /* Le menu commence caché */
-    transition: transform 0.3s ease-in-out;    
-    background-color: var(--first-color);
+.nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    font-family: 'TxtFont', sans-serif;
+    font-size: 1.2rem;
+    color: var(--second-color);
 }
-.navWrapper.open {
-    animation: slideIn 0.5s forwards; /* Animation pour glisser */
+.nav a, .subMenuWrapper button {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0.8rem 0;
+    color: var(--forth-color);
+    cursor: pointer;
 }
-.navWrapper.closed {
-    animation: slideOut 0.5s forwards; /* Animation pour fermer */
+.subMenuWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .welcomeMessage {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     font-family: 'TxtThinFont', sans-serif;
-    font-size: .8rem;
-    margin: 0 1rem;
-    
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .headerTop { padding: 1.2rem 2rem; }
+    .logoWrapper img, .headerTop img { width: 5rem; }
+    .topNav { gap: 4rem; }
+    .IconNav { display: block; }
+    .navWrapper { /* keep drawer behavior on tablet if needed */ }
+}
+@media (min-width: 1024px) {
+    .header {
+        display: flex;
+        justify-content: center;
+    }
+    .headerTop { display: none; }
+    .headerInner {
+        display: flex;
+        width: 88%;
+        max-width: 1600px;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+    }
+    .logoWrapper {
+        flex: 0 0 auto;
+    }
+    .desktopNav {
+        display: flex;
+        gap: 2rem;
+        font-family: 'TxtFont', sans-serif;
+        font-size: 1rem;
+    }
+    .desktopNav a {
+        color: var(--second-color);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+    }
+    .IconNav,
+    .navWrapper {
+        display: none;
+    }
+    .topNav {
+        flex: 0 0 auto;
+    }
+    .topNav .IconNav {
+        display: block !important;
+    }
 }

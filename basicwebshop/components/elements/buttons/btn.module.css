@@ -1,12 +1,13 @@
 /* === BASE BUTTON === */
 .button {
+    padding: 1rem;
+    background-color: transparent;
     border: none;
-    font-family: 'MainTitleFont', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'MainTitleFont', sans-serif;
+    cursor: pointer;
 }
 /* === SIZES === */
 .large {
@@ -27,22 +28,17 @@
     font-size: 0.8rem;
     text-align: center;
 }
-
-
-
-
 /* =====================  VARIANTS  ====================*/
- .validationStyle, .dashboardAccess, .cancelationStyle, .infosModifier {
+.validationStyle, .dashboardAccess, .cancelationStyle, .infosModifier {
     width: 64%;
     min-height: 2.4rem;
-    margin: .8rem auto;
+    margin: 1.6rem auto;
     color: var(--second-color);
     border-radius: 2.4rem;
-    box-shadow: 0 .2rem .2rem var(--second-color);
 }
 .validationStyle {background-color: var(--forth-color-light);}
 .cancelationStyle {background-color: var(--fifth-color-light);}
-.dashboardAccess {background-color: var(--first-color);}
+.dashboardAccess {background-color: var(--first-color); border: .1rem solid var(--second-color-light)}
 .infosModifier {background-color: var(--first-color);}
     .validationStyle:hover, .dashboardAccess:hover, .dashboardAccess:hover, .infosModifier:hover {
         box-shadow: none;
@@ -63,15 +59,24 @@
 /**********************************************/
 /************** Close modal ***************/
 .closeModal {
-    height: 4rem;
+    padding: 1rem;
+    color: var(--second-color);
+    font-family: 'TxtFont', sans-serif;
+    font-size: 4.8rem;
+    text-shadow: 0 .2rem var(--fifth-color);
+}
+/******************************************/
+/************** Close product modal ***************/
+.closeProductModal {
+    width: 100%;
     background-color: var(--first-color);
     color: var(--second-color);
     font-family: 'TxtFont', sans-serif;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     text-shadow: 0 .1rem var(--fifth-color);
-    position: absolute;
-    top: 0;
-    right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 /******************************************/
 
@@ -92,4 +97,13 @@
     padding-left: 0.8rem;
     font-size: 1.6rem;
     font-weight: bold;
+}
+
+@media (min-width: 769px) {
+    .validationStyle, .dashboardAccess, .cancelationStyle, .infosModifier {
+        min-height: 4rem;
+        margin: 2rem auto;
+        font-size: 1.6rem;
+    }
+        
 }

@@ -7,14 +7,13 @@ import productsData from "../datas/productsDatas";
 
 import ShippingFree from "../components/banners/smallTop/shippingFree/ShippingFree";
 import BannerHome from "../components/banners/bannersIntros/BannerHome";
-import Presentation from "../components/header/aboutus/Presentation";
-import NewProducts from "../components/banners/productsSelection/SwiperNewProducts";
-import BestSeller from "../components/banners/productsSelection/SwiperBestSeller";
+import Presentation from "../components/aboutus/Presentation";
+import ProductsSelectionGroup from "../components/banners/productsSelection/ProductsSelectionGroup";
 import ProductDetails from "../components/products/ProductDetailsModal";
-import SocialMedias from "../components/header/aboutus/SocialMedias_links";
-import FAQ from "../components/header/aboutus/FAQ";
-import Contacts from "../components/header/aboutus/Contacts";
-import Livraison from "../components/header/aboutus/Livraison";
+import SocialMedias from "../components/aboutus/SocialMedias_links";
+import FAQ from "../components/aboutus/FAQ";
+import Contacts from "../components/aboutus/Contacts";
+import Livraison from "../components/aboutus/Livraison";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,8 +32,7 @@ const App = () => {
       <ShippingFree />
       <BannerHome />
       <Presentation />
-      <NewProducts />
-      <BestSeller />
+      <ProductsSelectionGroup/>  
       <Livraison />
       <FAQ />
       <Contacts />

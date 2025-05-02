@@ -7,12 +7,6 @@ export default function ShippingFree() {
             <p className={styles.patch}>Livraison Gratuite</p>{/* Patch rond incliné */}
             <div className={styles.content}>
                 <p><strong>Livraison gratuite</strong> pour toute commande supérieure à <strong className={styles.highlight}>50€</strong>.</p>
-                <Button 
-                variant="closeModal" 
-                aria-label="Fermer la modale"
-                >
-                    &times;
-                </Button>
             </div>
         </div>
     );

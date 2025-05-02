@@ -1,107 +1,79 @@
-/* ==================== MODALE ==================== */
-.modaleHeader_container {
-    margin: .8rem auto;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  .title {
-    text-align: center;
-    font-family: 'MainTitleFont', sans-serif; 
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--second-color);
-    margin-bottom: 1.2rem;
-  }
-  
-  .content {
-    width: 88%;
+.content {
     margin: 1.2rem auto;
     display: flex;
     flex-direction: column;
-  }
-  
-  /* ==================== LIENS ==================== */
-  .link {
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: .6rem;
+    font-family: 'TxtThinFont', sans-serif;
+}
+/* ==================== LIENS ==================== */
+.link {
     text-align: center;
     color: var(--second-color);
     cursor: pointer;
     text-decoration: underline;
     margin-top: 0.5rem;
-  
     font-family: 'TxtFont', sans-serif;
     font-size: .8rem;
     color: var(--second-color-light);
     text-decoration: none;
     text-shadow: 0 .1rem .1rem var(--first-color-dark);
-  }
-  
-  .link:hover {
+}  
+.link:hover {
     color: var(--second-color);
-  }
-  
-  /* ==================== HELLO PROFIL ==================== */
-  .hello_container {
+}  
+/* ==================== HELLO PROFIL ==================== */
+.hello_container {
     width: 100%;
     padding: 1.2rem;
     text-align: center;
     font-family: 'TxtFont', sans-serif;
     font-size: .8rem;
-  }
-  
-  .hello_container p {
+}  
+.hello_container p {
     color: var(--second-color);
     font-size: .8rem;
-  }
-  
-  .hello_container p strong {
+}  
+.hello_container p strong {
     color: var(--forth-color);
     font-size: 1rem;
-  }
-  
-  /* ==================== RADIO CIVILITÉ ==================== */
-  .inputContainer {
+}  
+/* ==================== RADIO CIVILITÉ ==================== */
+.inputContainer {
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: .8rem auto 0;
-  }
-  
-  .inputContainer > label {
+}
+.inputContainer > label {
     font-family: 'TxtThinFont';
     font-size: .8rem;
     font-weight: bold;
     color: var(--second-color);
-  }
-  
-  .radioGroup { 
+}  
+.radioGroup { 
     width: 100%;
     flex-direction: row;
     margin: .4rem auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-  }
-  
-  .radioLabel {
+}  
+.radioLabel {
     padding: .4rem;
     font-size: .8rem;
     font-family: 'TxtThinFont', sans-serif;
     text-align: center;
     color: var(--forth-color-dark);
-  }
-  
-  .radioLabel input {
+}  
+.radioLabel input {
     margin: 0 .4rem;
-  }
-  
-  /* ==================== FLIP 3D STYLES ==================== */
-  
-  /* Wrapper global avec perspective */
-  .modalFlipWrapper {
+}  
+/* ==================== FLIP 3D STYLES ==================== */  
+/* Wrapper global avec perspective */
+.modalFlipWrapper {
     position: fixed;
     top: 0;
     left: 0;
@@ -112,24 +84,21 @@
     justify-content: center;
     align-items: center;
     perspective: 1500px;
-  }
-  
-  /* Inner flip container */
-  .modalFlipInner {
+}  
+/* Inner flip container */
+.modalFlipInner {
     width: 100%;
     max-width: 500px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s ease-in-out;
-  }
-  
-  /* Classe appliquée pour activer le flip */
-  .flipped {
+}  
+/* Classe appliquée pour activer le flip */
+.flipped {
     transform: rotateY(180deg);
-  }
-  
-  /* Faces */
-  .modalFlipFace {
+}
+/* Faces */
+.modalFlipFace {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -140,10 +109,55 @@
     justify-content: center;
     align-items: center;
     min-height: 450px;
-  }
-  
-  /* Face arrière */
-  .modalFlipFace:nth-child(2) {
+}  
+/* Face arrière */
+.modalFlipFace:nth-child(2) {
     transform: rotateY(180deg);
-  }
-  
+}
+.togglePassword {
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'TxtFont', sans-serif;
+    color: var(--second-color);
+}  
+
+
+
+
+
+@media (min-width: 769px) {
+    .title {
+        text-align: center;
+        font-family: 'MainTitleFont', sans-serif; 
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--second-color);
+        margin-bottom: 1.2rem;
+    } 
+    .content {
+        height: 50%;
+        width: 64%;
+        margin: 2.4rem auto;
+        display: flex;
+        font-size: .8rem;
+    }
+    .inputContainer {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: .4rem 0;
+    }
+    .inputContainer label {
+        min-width: 6rem;
+        font-size: 1rem;
+    }
+}
+@media (min-width: 1024px) {
+
+    .content {
+        width: 75%;
+    }
+}

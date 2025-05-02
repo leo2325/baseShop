@@ -1,27 +1,33 @@
 .filters {
     width: 88%;
-    margin: .2rem auto;
+    margin: .8rem auto;
+    font-family: 'TxtThinFont';
+    font-size: .8rem;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
 }
-
 .filters label {
-    font-family: 'TxtThinFont';
-    font-size: .8rem;
-    color: var(--second-color-light);
-    margin: 0;
-}
-
-.filters select {
-    font-family: 'TxtThinFont';
-    font-size: .8rem;
     color: var(--second-color);
-    border: none;
-    margin: .2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
 }
-
+.filters select {
+    color: var(--second-color-dark);
+    border: none;
+    width: 6rem;
+}
 .filters .checkbox {
-    margin-left: .5rem;
+    margin: .5rem;
+}
+@media (min-width: 768px) {
+    .filters, .filters select { font-size: 1rem; }
+    .filters { width: 56%; }
+}
+@media (min-width: 1024px) {
+    .filters { width: 40%; }
+    .filters select { width: 8rem; }
 }

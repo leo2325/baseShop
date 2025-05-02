@@ -1,37 +1,67 @@
 .checkoutContainer h1 {
     width: 100%;
-    margin-bottom: 1.6rem;
-    padding: 1.8rem auto;
+    margin-bottom: 1.4rem;
+    padding: 1.8rem 0;
     color: var(--second-color);
-    text-shadow: 0 0 .1rem var(--fifth-color);
+    text-shadow: 0 .2rem 0rem var(--fifth-color);
     font-size: 1.6rem;
     font-family: 'MainTitleFont', sans-serif;
     font-weight: bolder;
     text-align: center;
 }
+.checkoutContent {
+    font-family: 'TxtFont', sans-serif;
+}
+.form {
+    background-color: var(--first-color-dark);
+    border: 1px solid var(--second-color-dark);
+    border-radius: .8rem;
+    padding: .8rem;
 
+}
+.formSection {
+    width: 88%;
+    margin: 1.2rem auto;
+}
 
+.formSection h3, .formSection p {
+    width: 72%;
+    color: var(--second-color);
+}
+.formSection h3 {
+    font-size: 1rem;
+}
+.formSection p {
+    font-size: .8rem;
+}
 
 .summary {
-    width: 100%;
-    padding: 1.6rem;
+    width: 80%;
+    margin: 1.6rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .summary h2 {
     width: 100%;
     color: var(--second-color);
     text-shadow: 0 0 .1rem var(--fifth-color);
     font-size: 1.2rem;
-    font-family: 'TxtFont', sans-serif;
-    font-weight: bolder;
     text-align: center;
 }
 .summary ul {
-    width: 80%;
+    width: 100%;
+    min-height: 4rem;
     margin: .8rem;
     padding: .8rem;
     background-color: var(--first-color-light);
     color: var(--second-color-dark);
-    border-radius: .4rem;
+    border: .1px solid var(--first-color-dark);
+    border-radius: .8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 .summary li {
     list-style: none;
@@ -44,7 +74,35 @@
 }
 .totalCheckout {
     width: 100%;
-    font-family: 'TxtFont';
+    color: var(--second-color);
     font-size: 1.4rem;
     text-align: center;
+}
+
+.deliveryLine {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--second-color);
+  }
+  @media (min-width: 1024px) {
+    .checkoutContainer h1 {
+        padding: .8rem 0;
+        font-size: 1.6rem;
+    }
+    .form{
+        width: 64%;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+    .formSection {
+        width: 40%;
+    }
+    .totalCheckout {
+        font-size: 1.6rem;
+    }
 }

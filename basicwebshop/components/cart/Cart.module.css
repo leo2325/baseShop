@@ -79,6 +79,15 @@
 }
 /* ============ DELETE ITEM BTN =========== */
 .deleteBtn {
+    margin: 0 auto;  
+    color: var(--second-color);
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.deleteBtn svg{
     min-width: 2rem;
     height: 1rem;
     margin: 0 auto;  
@@ -86,24 +95,26 @@
 }
 /* ======================================== */
 /* ======================================================== */
-
 .totalContainer {
     margin: .8rem auto;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     color: var(--second-color);
-    font-family: 'MainTitleFont', sans-serif;
     font-family: 'TxtFont', sans-serif;
     font-size: 1.2rem;
 }
-.totalContainer p {
+.totalContainer div {
     margin: .8rem auto;
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
-    color: var(--second-color);
-    font-family: 'MainTitleFont', sans-serif;
-    font-family: 'TxtFont', sans-serif;
-    font-size: 1.2rem;
+    align-items: center;
+}
+.totalContainer span {
+    color: var(--second-color-light);
+    font-size: 1rem;
 }
 .emptyMessage {
     text-align: center;
@@ -127,11 +138,12 @@
     width: 1rem;
     height: 1rem;
     color: var(--second-color);
+    background-color: var(--first-color);
 }
 /*chiffre du compteur icone panier*/
 .itemCount {
     background-color: var(--forth-color);
-    color: white;
+    color: var(--second-color);
     border-radius: 50%;
     padding: 0.1rem 0.3rem;
     font-size: 0.6rem;
@@ -143,7 +155,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 900;
+    z-index: 850;
 }
 .modalContent {
     width: 100%;
@@ -155,3 +167,46 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+
+
+
+.deliveryProgress {
+    margin-top: 1rem;
+  }
+  
+  .progressBarWrapper {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .progressBar {
+    height: 100%;
+    transition: width 0.4s ease-in-out;
+    border-radius: 5px;
+  }
+
+  
+
+
+
+  .emptyCart {
+    width: 100%;
+    margin: 4rem auto;
+    color: var(--second-color-light);
+    font-size: 1rem;
+    font-family: 'TxtFont', sans-serif;
+    text-align: center;
+  }
+
+
+  @media (min-width: 769px) {
+    .itemCount {
+        padding: .2rem .6rem;
+        font-size: 1rem;
+    }
+    }

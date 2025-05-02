@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProducts, clearSelectedProduct } from '../store/productSlice';
 import productsData from '../../datas/productsDatas';
-
-import ShippingFree from '../../components/banners/smallTop/shippingFree/ShippingFree';
 import BannerPecanShop from '../../components/banners/bannersIntros/BannerPecanShop';
 import ProductDetails from '../../components/products/ProductDetailsModal';
 import ProductsGrid from '../../components/products/grid/ProductsGrid';
@@ -34,7 +32,6 @@ export default function Products() {
 
     return (
         <div>
-            <ShippingFree />
             <BannerPecanShop />
 
             {selectedProduct && <ProductDetails onClose={handleCloseModal} />}

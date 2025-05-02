@@ -4,7 +4,7 @@ import styles from './AboutUs.module.css';
 export default function Contacts() {
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Contacts</h2>
+            <h2>Contacts</h2>
 
             <section className={styles.content}>
                 

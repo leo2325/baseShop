@@ -3,15 +3,23 @@
 import { useEffect } from "react";
 import Button from "../buttons/Btn";
 import styles from "./modal.module.css";
+import useDisableBodyScroll from "@/hooks/useDisableBodyScroll"; // nouveau hook
 
 export default function Modal({ isOpen, onClose, title, children }) {
-    // Fermer la modale avec Esc
+    useDisableBodyScroll(isOpen); // hook utilisé ici
+
     useEffect(() => {
         const handleEsc = (e) => {
             if (e.key === "Escape") onClose();
         };
-        if (isOpen) window.addEventListener("keydown", handleEsc);
-        return () => window.removeEventListener("keydown", handleEsc);
+
+        if (isOpen) {
+            window.addEventListener("keydown", handleEsc);
+        }
+
+        return () => {
+            window.removeEventListener("keydown", handleEsc);
+        };
     }, [isOpen, onClose]);
 
     if (!isOpen) return null;

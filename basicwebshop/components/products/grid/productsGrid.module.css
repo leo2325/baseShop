@@ -1,9 +1,27 @@
 /* ========================== GRID LAYOUT ========================== */
  /* === ProductsGrid === */
 .grid {
+    width: 96%;
+    margin: 0 auto;
     background-color: var(--first-color);
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
     gap: .8rem;
     padding: .8rem;
+}
+@media (min-width: 769px) {
+    .grid {
+        width: 88%;
+        grid-template-columns: repeat(4, 1fr); /* 3 colonnes égales */
+        gap: .8rem;
+        padding: .8rem;
+    }
+}
+@media (min-width: 1024px) {
+    .grid {
+        width: 80%;
+        grid-template-columns: repeat(5, 1fr); /* 3 colonnes égales */
+        gap: .8rem;
+        padding: .8rem;
+    }
 }

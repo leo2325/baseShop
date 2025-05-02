@@ -1,8 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '@/app/store/cartSlice';
 import { clearSelectedProduct } from '@/app/store/productSlice';
 
 import Button from '../elements/buttons/Btn';
@@ -16,6 +15,15 @@ import styles from './Products.module.css';
 const ProductDetails = () => {
     const dispatch = useDispatch();
     const selectedProduct = useSelector((state) => state.product.selectedProduct);
+
+    useEffect(() => {
+        if (selectedProduct) {
+            document.body.classList.add("modal-open");
+        }
+        return () => {
+            document.body.classList.remove("modal-open");
+        };
+    }, [selectedProduct]);
 
     if (!selectedProduct) {
         return <p className={styles.errorMessage}>Produit introuvable.</p>;
@@ -40,14 +48,10 @@ const ProductDetails = () => {
                 <p className={styles.confirmationMessage}>{confirmationMessage}</p>
             )}
 
-            <div className={styles.modaleHeader_container}>
-                <Button variant="closeModal" onClick={handleCloseModal}>
-                    <p>Revenir aux produits</p>
+            <div className={styles.ProductDetails_container}>
+                <Button variant="closeProductModal" onClick={handleCloseModal} aria-label="Fermer la modale">
                     <FontAwesomeIcon icon={faXmark} className="icon" />
                 </Button>
-            </div>
-
-            <div className={styles.ProductDetails_container}>
                 <Caroussel product={selectedProduct} />
                 <Description product={selectedProduct} />
                 <FormatSelector
@@ -56,12 +60,6 @@ const ProductDetails = () => {
                     handleFormatChange={handleFormatChange}
                 />
                 <ToggleDetails product={selectedProduct} />
-            </div>
-
-            <div className={styles.addToCartContainer}>
-                <Button onClick={() => handleAddToCart(dispatch)} variant="validationStyle">
-                    Ajouter au panier
-                </Button>
             </div>
         </div>
     );
